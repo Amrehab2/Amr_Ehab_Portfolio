@@ -3,7 +3,7 @@
 Welcome to my professional data analytics portfolio.  
 This website highlights my key projects in A/B testing, SQL analysis, Tableau dashboards, and exploratory data analysis with Python.
 
-🌐 **Live Site:** [https://YOUR_GITHUB_USERNAME.github.io/amr-ehab-portfolio](https://YOUR_GITHUB_USERNAME.github.io/amr-ehab-portfolio)
+🌐 **Live Site:** https://github.com/Amrehab2/Amr_Ehab_Portfolio
 
 ---
 
