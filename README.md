@@ -29,6 +29,6 @@ I specialize in Python, SQL, Tableau, and Excel, with experience in A/B testing,
 
 ---
 
-📩 **Email:** your.email@example.com  
-💼 **LinkedIn:** [add your LinkedIn URL]  
-💻 **GitHub:** [https://github.com/YOUR_GITHUB_USERNAME](https://github.com/YOUR_GITHUB_USERNAME)
+📩 **Email:** amre2809@gmail.com
+💼 **LinkedIn:** https://www.linkedin.com/in/amrehab1/ 
+💻 **GitHub:** https://github.com/Amrehab2/Amr_Ehab_Portfolio
