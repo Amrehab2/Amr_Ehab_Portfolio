@@ -56,10 +56,3 @@ Welcome to my **Data Analytics Portfolio**, showcasing my work in **data analysi
 
 ---
 
-## 🌐 Live Portfolio
-Once deployed, your GitHub Pages site will be available at:  
-👉 **https://yourusername.github.io/amr-ehab-portfolio**
-
----
-
-⭐ *If you like this portfolio or want to collaborate, feel free to star the repo or reach out!*
