@@ -5,96 +5,123 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Amr Ehab | Data Analytics Portfolio</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
 </head>
-<body class="bg-gray-100 text-gray-800">
+<body class="bg-gray-50 text-gray-800">
 
-  <!-- Header / Hero Section -->
-  <header class="bg-blue-700 text-white py-16 text-center shadow-lg">
-    <h1 class="text-4xl font-bold mb-3">Amr Ehab</h1>
-    <p class="text-lg max-w-2xl mx-auto">
-      Data Analyst skilled in transforming raw data into actionable insights.
-      Experienced with Python, SQL, Excel, and Tableau — passionate about data storytelling and evidence-based decisions.
+  <!-- Navbar -->
+  <nav class="bg-white shadow fixed w-full top-0 left-0 z-50">
+    <div class="max-w-6xl mx-auto flex justify-between items-center px-6 py-4">
+      <h1 class="font-bold text-xl text-blue-700">Amr Ehab</h1>
+      <div class="space-x-6 text-gray-700 font-medium">
+        <a href="#about" class="hover:text-blue-700">About</a>
+        <a href="#projects" class="hover:text-blue-700">Projects</a>
+        <a href="#contact" class="hover:text-blue-700">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="bg-blue-700 text-white text-center py-32 mt-16 shadow-lg">
+    <h2 class="text-5xl font-bold mb-4">Hi, I'm Amr Ehab</h2>
+    <p class="text-xl max-w-2xl mx-auto leading-relaxed">
+      A Data Analyst passionate about transforming data into actionable insights.
+      Skilled in Python, SQL, Excel, and Tableau — I help organizations make smarter, data-driven decisions.
     </p>
   </header>
 
   <!-- About Section -->
-  <section id="about" class="py-12 bg-white">
-    <div class="max-w-4xl mx-auto px-4 text-center">
-      <h2 class="text-3xl font-bold mb-4">About Me</h2>
-      <p class="text-gray-700 leading-relaxed">
-        I’m a Data Analyst with a strong background in statistical analysis, visualization, and problem-solving.
-        I specialize in cleaning, analyzing, and interpreting complex datasets to drive business performance.
-        Using tools like Python, Pandas, SQL, and Tableau, I deliver data-driven solutions and insights that support strategic decisions.
+  <section id="about" class="py-20 bg-white">
+    <div class="max-w-5xl mx-auto text-center px-6">
+      <h2 class="text-3xl font-bold mb-6">About Me</h2>
+      <p class="text-gray-700 leading-relaxed text-lg">
+        I'm a data professional who thrives on solving complex problems through analytical thinking.
+        I specialize in data cleaning, analysis, and visualization — helping stakeholders uncover trends
+        and make informed business decisions. My work combines technical skill with storytelling, ensuring
+        insights are both accurate and understandable.
       </p>
     </div>
   </section>
 
   <!-- Projects Section -->
-  <section id="projects" class="py-16 bg-gray-50">
-    <div class="max-w-5xl mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center mb-10">Data Analytics Projects</h2>
+  <section id="projects" class="py-20 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Featured Projects</h2>
 
-      <!-- Project 1 -->
-      <div class="bg-white shadow-md rounded-2xl p-6 mb-8 hover:shadow-xl transition">
-        <h3 class="text-2xl font-semibold mb-2">A/B Test Analysis</h3>
-        <p class="text-gray-700 mb-3">
-          Conducted a comprehensive A/B test to evaluate the impact of a new web page design on user conversion rates.
-          Applied statistical analysis using Python and libraries such as <strong>Pandas</strong>, <strong>NumPy</strong>, and <strong>Statsmodels</strong>.
-          Performed hypothesis testing, calculated p-values, and applied <strong>logistic regression</strong> to measure user engagement improvements.
-          Results showed a statistically significant <strong>increase in conversion rate</strong>, leading to the decision to release the new page.
-        </p>
-        <a href="https://drive.google.com/drive/folders/1L4XB5JZyGlTndN6rTd_5Wewr4QU-jAi6" target="_blank" class="text-blue-600 font-semibold hover:underline">🔗 View Project</a>
-      </div>
+      <div class="grid md:grid-cols-2 gap-8">
 
-      <!-- Project 2 -->
-      <div class="bg-white shadow-md rounded-2xl p-6 mb-8 hover:shadow-xl transition">
-        <h3 class="text-2xl font-semibold mb-2">Digital Music Store Analysis</h3>
-        <p class="text-gray-700 mb-3">
-          Analyzed the <strong>Parch & Posey Music Store</strong> dataset to explore customer purchasing behavior and track performance.
-          Utilized <strong>SQL</strong> for querying the database and <strong>Excel</strong> for aggregation and visualization.
-          Created bar charts and trend analyses to identify top-selling genres, top-performing artists, and purchasing trends over time.
-          Extracted actionable business insights that could improve marketing strategies and playlist recommendations.
-        </p>
-        <a href="https://drive.google.com/drive/folders/1WVteNh1wgLNubfEW-OoUaEQ4EDvrFgNO" target="_blank" class="text-blue-600 font-semibold hover:underline">🔗 View Project</a>
-      </div>
+        <!-- Project 1 -->
+        <div class="bg-white rounded-2xl shadow hover:shadow-2xl transition p-6">
+          <h3 class="text-2xl font-semibold mb-2 text-blue-700">A/B Test Analysis</h3>
+          <p class="text-gray-700 mb-4">
+            Conducted an A/B test to assess the impact of a new web page on user conversion rates.
+            Applied <strong>Python</strong>, <strong>Pandas</strong>, and <strong>Statsmodels</strong> for statistical testing,
+            logistic regression, and significance analysis. Results confirmed a notable increase in conversions,
+            justifying full deployment.
+          </p>
+          <a href="https://drive.google.com/drive/folders/1L4XB5JZyGlTndN6rTd_5Wewr4QU-jAi6" target="_blank"
+             class="inline-block mt-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">View Project</a>
+        </div>
 
-      <!-- Project 3 -->
-      <div class="bg-white shadow-md rounded-2xl p-6 mb-8 hover:shadow-xl transition">
-        <h3 class="text-2xl font-semibold mb-2">US Flights Dashboard</h3>
-        <p class="text-gray-700 mb-3">
-          Designed and developed an interactive dashboard using <strong>Tableau</strong> to analyze the <strong>2015 US Flights Dataset</strong>.
-          Visualized flight delays, cancellations, and performance metrics across airlines and airports.
-          Used calculated fields and filters to uncover insights such as the busiest airports, most delayed routes, and seasonal trends.
-          The dashboard allows interactive exploration, making it valuable for both analysts and stakeholders seeking operational insights.
-        </p>
-        <a href="https://drive.google.com/file/d/1CCg5-Yn2rCOgc9EPMSr2sZYyqwLx5rrl/view" target="_blank" class="text-blue-600 font-semibold hover:underline">🔗 View Project</a>
-      </div>
+        <!-- Project 2 -->
+        <div class="bg-white rounded-2xl shadow hover:shadow-2xl transition p-6">
+          <h3 class="text-2xl font-semibold mb-2 text-blue-700">Digital Music Store Analysis</h3>
+          <p class="text-gray-700 mb-4">
+            Analyzed a digital music store database using <strong>SQL</strong> and <strong>Excel</strong> to uncover
+            customer behavior and product performance. Identified top-selling artists and genres through aggregation,
+            visualization, and KPI tracking to enhance marketing decisions.
+          </p>
+          <a href="https://drive.google.com/drive/folders/1WVteNh1wgLNubfEW-OoUaEQ4EDvrFgNO" target="_blank"
+             class="inline-block mt-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">View Project</a>
+        </div>
 
-      <!-- Project 4 -->
-      <div class="bg-white shadow-md rounded-2xl p-6 mb-8 hover:shadow-xl transition">
-        <h3 class="text-2xl font-semibold mb-2">Investigate a Dataset</h3>
-        <p class="text-gray-700 mb-3">
-          Conducted a deep exploratory analysis of a selected dataset using <strong>Python</strong> and libraries such as
-          <strong>Pandas</strong>, <strong>Seaborn</strong>, <strong>Matplotlib</strong>, and <strong>NumPy</strong>.
-          Performed data cleaning, feature selection, and visualization to identify hidden patterns and correlations.
-          Communicated findings through clear plots and visual summaries that supported data-driven conclusions.
-          The project demonstrated end-to-end analytical thinking — from question formulation to insight communication.
-        </p>
-        <a href="https://drive.google.com/file/d/16InVaHQUzLA20ikfldCJOH6AaVVZ7Djt/view" target="_blank" class="text-blue-600 font-semibold hover:underline">🔗 View Project</a>
+        <!-- Project 3 -->
+        <div class="bg-white rounded-2xl shadow hover:shadow-2xl transition p-6">
+          <h3 class="text-2xl font-semibold mb-2 text-blue-700">US Flights Dashboard</h3>
+          <p class="text-gray-700 mb-4">
+            Built an interactive dashboard in <strong>Tableau</strong> analyzing flight delays, cancellations, and
+            performance metrics using the <strong>2015 US Flights dataset</strong>. Delivered insights on busiest airports,
+            seasonal patterns, and top delay causes via dynamic visuals.
+          </p>
+          <a href="https://drive.google.com/file/d/1CCg5-Yn2rCOgc9EPMSr2sZYyqwLx5rrl/view" target="_blank"
+             class="inline-block mt-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">View Project</a>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="bg-white rounded-2xl shadow hover:shadow-2xl transition p-6">
+          <h3 class="text-2xl font-semibold mb-2 text-blue-700">Investigate a Dataset</h3>
+          <p class="text-gray-700 mb-4">
+            Conducted exploratory data analysis using <strong>Python</strong> with <strong>Pandas</strong>,
+            <strong>Matplotlib</strong>, and <strong>Seaborn</strong>. Cleaned and visualized data to answer
+            targeted questions and uncover trends. Presented results using clear visuals and statistical insights.
+          </p>
+          <a href="https://drive.google.com/file/d/16InVaHQUzLA20ikfldCJOH6AaVVZ7Djt/view" target="_blank"
+             class="inline-block mt-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">View Project</a>
+        </div>
+
       </div>
     </div>
   </section>
 
   <!-- Contact Section -->
-  <section id="contact" class="py-12 bg-white text-center">
-    <h2 class="text-3xl font-bold mb-4">Get in Touch</h2>
-    <p class="text-gray-700 mb-3">Interested in collaborating or viewing more of my work?</p>
-    <p class="text-blue-700 font-semibold">📧 amre2809@gmail.com</p>
+  <section id="contact" class="py-20 bg-white text-center">
+    <h2 class="text-3xl font-bold mb-4">Let's Connect</h2>
+    <p class="text-gray-700 text-lg mb-6">
+      Have a project idea or want to learn more about my work? Feel free to reach out.
+    </p>
+    <a href="mailto:amre2809@gmail.com"
+       class="inline-block px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition">
+       📧 amre2809@gmail.com
+    </a>
   </section>
 
   <!-- Footer -->
-  <footer class="bg-gray-800 text-gray-300 text-center py-4">
-    <p>© 2025 Amr Ehab. All rights reserved.</p>
+  <footer class="bg-gray-800 text-gray-300 text-center py-6">
+    <p>© 2025 Amr Ehab — Data Analytics Portfolio</p>
   </footer>
 
 </body>
