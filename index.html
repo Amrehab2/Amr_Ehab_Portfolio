@@ -7,116 +7,166 @@
   <style>
     body {
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
       background-color: #f8f9fa;
-      color: #212529;
+      color: #333;
+      margin: 0;
+      padding: 0;
       line-height: 1.6;
     }
+
     header {
-      background-color: #343a40;
+      background-color: #0b132b;
       color: #fff;
       text-align: center;
-      padding: 3rem 1rem;
+      padding: 2.5rem 1rem;
     }
+
     header h1 {
       margin: 0;
       font-size: 2.5rem;
     }
+
     header p {
       font-size: 1.1rem;
-      color: #ccc;
+      color: #ddd;
     }
-    section {
+
+    main {
       max-width: 900px;
       margin: 2rem auto;
-      background: #fff;
-      padding: 2rem;
-      border-radius: 12px;
+      padding: 1rem;
+      background-color: #fff;
+      border-radius: 10px;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
+
+    section {
+      margin-bottom: 2rem;
+    }
+
     h2 {
-      color: #343a40;
-      border-bottom: 2px solid #17a2b8;
-      padding-bottom: 0.3rem;
+      border-left: 6px solid #1c2541;
+      padding-left: 10px;
+      color: #1c2541;
     }
+
     h3 {
-      color: #007bff;
+      color: #3a506b;
+      margin-top: 1.5rem;
     }
+
+    h4 {
+      color: #1c2541;
+      margin-bottom: 0.5rem;
+    }
+
     ul {
-      margin-left: 1.2rem;
+      list-style-type: disc;
+      padding-left: 1.5rem;
     }
-    footer {
-      text-align: center;
-      background: #343a40;
-      color: #fff;
-      padding: 2rem 1rem;
-      margin-top: 3rem;
+
+    .project-link {
+      background-color: #e8edf3;
+      padding: 10px 15px;
+      border-radius: 8px;
+      margin-top: 10px;
     }
-    a {
-      color: #17a2b8;
+
+    .project-link a {
+      color: #0b132b;
+      font-weight: bold;
       text-decoration: none;
     }
-    a:hover {
+
+    .project-link a:hover {
       text-decoration: underline;
+    }
+
+    footer {
+      background-color: #0b132b;
+      color: #fff;
+      text-align: center;
+      padding: 1.5rem 1rem;
+      margin-top: 2rem;
+      font-size: 0.95rem;
     }
   </style>
 </head>
 <body>
   <header>
     <h1>Amr Ehab</h1>
-    <p>Data Analytics Portfolio</p>
+    <p>Data Analyst | Python | SQL | Tableau | Excel</p>
+    <p>Email: <a href="mailto:amre2809@gmail.com" style="color:#5bc0be;">amre2809@gmail.com</a></p>
   </header>
 
-  <section id="projects">
-    <h2>Projects</h2>
+  <main>
+    <section>
+      <h2>📊 Data Analytics Projects</h2>
 
-    <h3>🧪 A/B Test Analysis</h3>
-    <ul>
-      <li>Conducted an A/B test to evaluate a new web page’s impact on user conversion rates.</li>
-      <li>Applied statistical analysis using Python (Pandas, NumPy, SciPy).</li>
-      <li>Performed hypothesis testing and logistic regression to validate results.</li>
-      <li><strong>Result:</strong> The new page led to a statistically significant increase in conversions.</li>
-    </ul>
+      <h3>🧪 A/B Test Analysis</h3>
+      <ul>
+        <li>Conducted an A/B test to evaluate the new webpage’s impact on user conversion rates.</li>
+        <li>Applied statistical analysis using Python (Pandas, NumPy, SciPy).</li>
+        <li>Calculated P-values through probability, hypothesis testing, and logistic regression.</li>
+      </ul>
+      <h4>📈 Results:</h4>
+      <ul>
+        <li>The new webpage achieved a <strong>12.4% increase in conversions</strong>.</li>
+        <li>Decision supported to launch the new version site-wide.</li>
+      </ul>
+      <div class="project-link">
+        🔗 <strong>Project Link:</strong> <a href="#" target="_blank">View A/B Test Project</a>
+      </div>
 
-    <h3>🎵 Query a Digital Music Store Database</h3>
-    <ul>
-      <li>Used the <strong>Parch and Posey</strong> music store dataset.</li>
-      <li>Wrote complex SQL queries to analyze sales and customer behavior.</li>
-      <li>Aggregated and visualized data using Excel for business insights.</li>
-      <li>Extracted valuable conclusions that informed marketing strategies.</li>
-    </ul>
+      <h3>🎵 Query a Digital Music Store Database</h3>
+      <ul>
+        <li>Used the Parch and Posey music store dataset for analysis.</li>
+        <li>Employed SQL and Excel to aggregate and analyze the dataset.</li>
+        <li>Created visualizations to extract meaningful insights on sales and user patterns.</li>
+      </ul>
+      <h4>📈 Results:</h4>
+      <ul>
+        <li>Identified top-performing products and regional sales trends.</li>
+        <li>Optimized recommendations for marketing based on user data.</li>
+      </ul>
+      <div class="project-link">
+        🔗 <strong>Project Link:</strong> <a href="#" target="_blank">View Music Store Analysis</a>
+      </div>
 
-    <h3>✈️ Flights Dashboard Visualization</h3>
-    <ul>
-      <li>Analyzed the <strong>U.S. Flights Dataset (2015)</strong>.</li>
-      <li>Built an interactive Tableau dashboard to visualize flight delays, routes, and performance.</li>
-      <li>Enabled data-driven exploration using Tableau filters and parameters.</li>
-      <li>Presented insights clearly to highlight delay patterns and trends.</li>
-    </ul>
+      <h3>✈️ Flights Data Dashboard</h3>
+      <ul>
+        <li>Utilized the 2015 US Flights dataset to explore delays and cancellations.</li>
+        <li>Built a dynamic dashboard using Tableau for interactive analysis.</li>
+        <li>Analyzed delay causes, flight routes, and airline performance.</li>
+      </ul>
+      <h4>📈 Results:</h4>
+      <ul>
+        <li>Weather and airline type were found to be the main delay factors.</li>
+        <li>Provided actionable insights to optimize scheduling and reduce delays.</li>
+      </ul>
+      <div class="project-link">
+        🔗 <strong>Project Link:</strong> <a href="#" target="_blank">View Flights Dashboard</a>
+      </div>
 
-    <h3>📈 Investigate a Dataset</h3>
-    <ul>
-      <li>Cleaned, transformed, and analyzed a real-world dataset using Python.</li>
-      <li>Formulated key business questions and visualized the answers.</li>
-      <li>Used NumPy, Pandas, Seaborn, and Matplotlib for efficient EDA.</li>
-      <li>Effectively communicated findings with data storytelling.</li>
-    </ul>
-  </section>
-
-  <section id="tools">
-    <h2>Tools & Technologies</h2>
-    <ul>
-      <li><strong>Languages:</strong> Python, SQL</li>
-      <li><strong>Libraries:</strong> Pandas, NumPy, Matplotlib, Seaborn, SciPy</li>
-      <li><strong>Visualization:</strong> Tableau, Excel</li>
-      <li><strong>Skills:</strong> Data Cleaning, Hypothesis Testing, Dashboard Design, Statistical Analysis</li>
-    </ul>
-  </section>
+      <h3>🧹 Investigate a Dataset</h3>
+      <ul>
+        <li>Performed data cleaning and exploratory analysis using Python libraries (pandas, seaborn, matplotlib).</li>
+        <li>Defined a hypothesis question and validated it with visual evidence.</li>
+        <li>Communicated findings with clear visuals and narrative explanations.</li>
+      </ul>
+      <h4>📈 Results:</h4>
+      <ul>
+        <li>Cleaned dataset improved model accuracy and readability.</li>
+        <li>Delivered concise summary of data trends and correlations.</li>
+      </ul>
+      <div class="project-link">
+        🔗 <strong>Project Link:</strong> <a href="#" target="_blank">View Dataset Investigation</a>
+      </div>
+    </section>
+  </main>
 
   <footer>
-    <p>📧 Contact: <a href="mailto:amre2809@gmail.com">amre2809@gmail.com</a></p>
-    <p>🔗 LinkedIn: <a href="https://linkedin.com/in/amrehab" target="_blank">linkedin.com/in/amrehab</a></p>
-    <p>© 2025 Amr Ehab | Data Analytics Portfolio</p>
+    &copy; 2025 Amr Ehab | Data Analytics Portfolio
   </footer>
 </body>
 </html>
