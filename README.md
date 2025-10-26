@@ -1,58 +1,86 @@
-# Amr Ehab | Data Analytics Portfolio
+# 📊 Amr Ehab | Data Analytics Portfolio
 
-Welcome to my **Data Analytics Portfolio**, showcasing my work in **data analysis, visualization, and statistical modeling** using **Python, SQL, Excel, and Tableau**.
+Welcome to my **Data Analytics Portfolio**, a collection of real-world projects demonstrating my ability to clean, analyze, visualize, and interpret data to support business decisions.
+
+I specialize in **Python**, **SQL**, **Excel**, and **Tableau**, focusing on turning raw data into actionable insights.
 
 ---
 
-## 📊 Projects Overview
+## 🚀 Projects Overview
 
 ### 🧪 A/B Test Analysis
-- Conducted an A/B test to evaluate a new web page’s impact on user conversion rates.
-- Used Python for hypothesis testing, P-value calculation, and logistic regression.
-- **Result:** 12.4% increase in user conversions → led to full rollout.
+**Goal:** Evaluate the impact of a new webpage on user conversion rates.  
+**Tools:** Python (Pandas, NumPy, SciPy, Matplotlib)  
 
-🔗 **Project Link:** https://drive.google.com/drive/folders/1L4XB5JZyGlTndN6rTd_5Wewr4QU-jAi6(#)
+**Key Results:**
+- The new webpage increased conversions by **12.4%**.
+- Validated statistical significance through **hypothesis testing and logistic regression**.
+- Supported decision to launch the new design globally.
+
+🔗 [View A/B Test Project](https://drive.google.com/drive/folders/1L4XB5JZyGlTndN6rTd_5Wewr4QU-jAi6)
 
 ---
 
 ### 🎵 Query a Digital Music Store Database
-- Queried and analyzed the Parch and Posey music store database using SQL and Excel.
-- Created visualizations to extract insights about sales and customer behavior.
-- **Result:** Identified top-performing products and regional trends.
+**Goal:** Analyze customer purchasing trends using SQL and Excel.  
+**Tools:** SQL, Excel, Data Visualization  
 
-🔗 **Project Link:** https://drive.google.com/drive/folders/1WVteNh1wgLNubfEW-OoUaEQ4EDvrFgNO(#)
+**Key Results:**
+- Identified **top-performing products** and **regional sales trends**.
+- Delivered actionable insights for marketing and sales optimization.
+
+🔗 [View Music Store Analysis](https://drive.google.com/drive/folders/1WVteNh1wgLNubfEW-OoUaEQ4EDvrFgNO)
 
 ---
 
 ### ✈️ Flights Data Dashboard
-- Built an interactive Tableau dashboard using the 2015 US Flights dataset.
-- Analyzed flight delays and airline performance metrics.
-- **Result:** Found that weather and airline type were top delay factors.
+**Goal:** Visualize US flight data (2015) to analyze delays and cancellations.  
+**Tools:** Tableau, Data Cleaning (Excel, Python)  
 
-🔗 **Project Link:**https://drive.google.com/file/d/1CCg5-Yn2rCOgc9EPMSr2sZYyqwLx5rrl/view(#)
+**Key Results:**
+- Revealed that **weather and airline type** were primary delay factors.
+- Created an **interactive Tableau dashboard** for stakeholders to explore patterns.
+
+🔗 [View Flights Dashboard Project](https://drive.google.com/file/d/1CCg5-Yn2rCOgc9EPMSr2sZYyqwLx5rrl/view)
 
 ---
 
 ### 🧹 Investigate a Dataset
-- Cleaned and analyzed data using Python (pandas, seaborn, matplotlib).
-- Created hypotheses and validated insights with visual analysis.
-- **Result:** Delivered actionable insights with improved data quality.
+**Goal:** Clean, explore, and communicate insights from a complex dataset.  
+**Tools:** Python (pandas, seaborn, matplotlib)  
 
-🔗 **Project Link:** https://drive.google.com/file/d/16InVaHQUzLA20ikfldCJOH6AaVVZ7Djt/view(#)
+**Key Results:**
+- Improved dataset quality and structure.
+- Discovered meaningful trends and correlations.
+- Presented findings through clear visualizations and summaries.
+
+🔗 [View Dataset Investigation Project](https://drive.google.com/file/d/16InVaHQUzLA20ikfldCJOH6AaVVZ7Djt/view)
 
 ---
 
 ## 🧠 Tools & Technologies
-- **Languages:** Python, SQL  
-- **Libraries:** pandas, NumPy, Matplotlib, seaborn, SciPy  
-- **Visualization:** Tableau, Excel  
-- **Other:** Jupyter Notebook, Git, GitHub  
+
+| Category | Tools |
+|-----------|-------|
+| **Languages** | Python, SQL |
+| **Libraries** | pandas, NumPy, seaborn, Matplotlib, SciPy |
+| **Visualization** | Tableau, Excel |
+| **Other** | Jupyter Notebook, Git, GitHub |
+
+---
+
+## 🌐 Live Portfolio Website
+You can view my full interactive portfolio here:  
+👉 **[https://yourusername.github.io/amr-ehab-portfolio](https://yourusername.github.io/amr-ehab-portfolio)**  
+*(Replace “yourusername” with your GitHub username once published.)*
 
 ---
 
 ## 📬 Contact
 **Name:** Amr Ehab  
-**Email:** [amre2809@gmail.com](mailto:amre2809@gmail.com)
+**Email:** [amre2809@gmail.com](mailto:amre2809@gmail.com)  
+**Location:** Egypt  
 
 ---
 
+⭐ *If you like this portfolio or want to collaborate, feel free to star the repo or reach out!*
