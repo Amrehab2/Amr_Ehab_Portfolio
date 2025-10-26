@@ -1,34 +1,65 @@
-# Amr Ehab – Data Analyst Portfolio
+# Amr Ehab | Data Analytics Portfolio
 
-Welcome to my professional data analytics portfolio.  
-This website highlights my key projects in A/B testing, SQL analysis, Tableau dashboards, and exploratory data analysis with Python.
-
-🌐 **Live Site:** https://github.com/Amrehab2/Amr_Ehab_Portfolio
+Welcome to my **Data Analytics Portfolio**, showcasing my work in **data analysis, visualization, and statistical modeling** using **Python, SQL, Excel, and Tableau**.
 
 ---
 
-## 🧠 About Me
-I’m Amr Ehab, a data analyst who loves turning raw data into actionable insights.  
-I specialize in Python, SQL, Tableau, and Excel, with experience in A/B testing, visualization, and data storytelling.
+## 📊 Projects Overview
+
+### 🧪 A/B Test Analysis
+- Conducted an A/B test to evaluate a new web page’s impact on user conversion rates.
+- Used Python for hypothesis testing, P-value calculation, and logistic regression.
+- **Result:** 12.4% increase in user conversions → led to full rollout.
+
+🔗 **Project Link:** https://drive.google.com/drive/folders/1L4XB5JZyGlTndN6rTd_5Wewr4QU-jAi6(#)
 
 ---
 
-## 🚀 Projects
-- **A/B Test Analysis:** Statistical evaluation of web page design changes and conversion uplift.  
-- **Digital Music Store Analysis:** SQL and Excel exploration of sales and customer behavior.  
-- **US Flights Dashboard:** Tableau dashboard revealing patterns in flight delays.  
-- **Dataset Investigation:** Python EDA with pandas, seaborn, and Matplotlib.
+### 🎵 Query a Digital Music Store Database
+- Queried and analyzed the Parch and Posey music store database using SQL and Excel.
+- Created visualizations to extract insights about sales and customer behavior.
+- **Result:** Identified top-performing products and regional trends.
+
+🔗 **Project Link:** https://drive.google.com/drive/folders/1WVteNh1wgLNubfEW-OoUaEQ4EDvrFgNO(#)
 
 ---
 
-## 🧰 Tools & Skills
-**Languages:** Python, SQL  
-**Visualization:** Tableau, Excel, Matplotlib, seaborn  
-**Analytics:** A/B Testing, Hypothesis Testing, Regression  
-**Soft Skills:** Problem Solving, Data Storytelling, Communication
+### ✈️ Flights Data Dashboard
+- Built an interactive Tableau dashboard using the 2015 US Flights dataset.
+- Analyzed flight delays and airline performance metrics.
+- **Result:** Found that weather and airline type were top delay factors.
+
+🔗 **Project Link:**https://drive.google.com/file/d/1CCg5-Yn2rCOgc9EPMSr2sZYyqwLx5rrl/view(#)
 
 ---
 
-📩 **Email:** amre2809@gmail.com
-💼 **LinkedIn:** https://www.linkedin.com/in/amrehab1/ 
-💻 **GitHub:** https://github.com/Amrehab2/Amr_Ehab_Portfolio
+### 🧹 Investigate a Dataset
+- Cleaned and analyzed data using Python (pandas, seaborn, matplotlib).
+- Created hypotheses and validated insights with visual analysis.
+- **Result:** Delivered actionable insights with improved data quality.
+
+🔗 **Project Link:** https://drive.google.com/file/d/16InVaHQUzLA20ikfldCJOH6AaVVZ7Djt/view(#)
+
+---
+
+## 🧠 Tools & Technologies
+- **Languages:** Python, SQL  
+- **Libraries:** pandas, NumPy, Matplotlib, seaborn, SciPy  
+- **Visualization:** Tableau, Excel  
+- **Other:** Jupyter Notebook, Git, GitHub  
+
+---
+
+## 📬 Contact
+**Name:** Amr Ehab  
+**Email:** [amre2809@gmail.com](mailto:amre2809@gmail.com)
+
+---
+
+## 🌐 Live Portfolio
+Once deployed, your GitHub Pages site will be available at:  
+👉 **https://yourusername.github.io/amr-ehab-portfolio**
+
+---
+
+⭐ *If you like this portfolio or want to collaborate, feel free to star the repo or reach out!*
