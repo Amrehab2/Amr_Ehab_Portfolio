@@ -1,198 +1,122 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Amr Ehab — Data Analyst Portfolio</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <meta name="description" content="Amr Ehab — Data Analyst portfolio showcasing A/B testing, SQL analysis, Tableau dashboards, and EDA with Python." />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Amr Ehab | Data Analytics Portfolio</title>
   <style>
-    /* small extra polish */
-    .badge { @apply inline-block px-2 py-1 rounded-full text-xs font-medium bg-gray-100 border border-gray-200; }
-    .card { @apply bg-white rounded-2xl shadow-md p-6; }
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      background-color: #f8f9fa;
+      color: #212529;
+      line-height: 1.6;
+    }
+    header {
+      background-color: #343a40;
+      color: #fff;
+      text-align: center;
+      padding: 3rem 1rem;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+    header p {
+      font-size: 1.1rem;
+      color: #ccc;
+    }
+    section {
+      max-width: 900px;
+      margin: 2rem auto;
+      background: #fff;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+    h2 {
+      color: #343a40;
+      border-bottom: 2px solid #17a2b8;
+      padding-bottom: 0.3rem;
+    }
+    h3 {
+      color: #007bff;
+    }
+    ul {
+      margin-left: 1.2rem;
+    }
+    footer {
+      text-align: center;
+      background: #343a40;
+      color: #fff;
+      padding: 2rem 1rem;
+      margin-top: 3rem;
+    }
+    a {
+      color: #17a2b8;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
-<body class="bg-slate-50 text-slate-800 antialiased">
-  <header class="max-w-6xl mx-auto p-6 flex items-center justify-between">
-    <div>
-      <h1 class="text-2xl font-extrabold">Amr Ehab</h1>
-      <p class="text-sm text-slate-500">Data Analyst — Turning raw data into actionable insights</p>
-    </div>
-    <nav class="space-x-4 text-sm text-slate-600">
-      <a href="#projects" class="hover:underline">Projects</a>
-      <a href="#skills" class="hover:underline">Skills</a>
-      <a href="#contact" class="hover:underline">Contact</a>
-    </nav>
+<body>
+  <header>
+    <h1>Amr Ehab</h1>
+    <p>Data Analytics Portfolio</p>
   </header>
 
-  <main class="max-w-6xl mx-auto px-6 pb-20">
-    <!-- Hero -->
-    <section class="grid md:grid-cols-3 gap-6 items-center mb-8">
-      <div class="md:col-span-2 card">
-        <h2 class="text-3xl font-bold mb-2">Hi — I’m Amr. I love using data to solve real problems.</h2>
-        <p class="text-slate-600 mb-4">I specialize in data cleaning, exploratory analysis, statistical testing, and building dashboards that help stakeholders make informed decisions. I work with Python, SQL, Tableau, and Excel to transform raw datasets into clear, usable insights.</p>
-        <div class="flex flex-wrap gap-2">
-          <span class="badge">Python</span>
-          <span class="badge">pandas</span>
-          <span class="badge">NumPy</span>
-          <span class="badge">SQL</span>
-          <span class="badge">Tableau</span>
-          <span class="badge">Excel</span>
-          <span class="badge">A/B Testing</span>
-          <span class="badge">Hypothesis Testing</span>
-        </div>
-      </div>
-      <div class="card text-center">
-        <div class="w-28 h-28 bg-gradient-to-br from-orange-300 to-rose-300 rounded-full mx-auto flex items-center justify-center text-white text-xl font-semibold">AE</div>
-        <p class="mt-4 text-sm text-slate-600">Amr Ehab — Data Analyst<br/>Based in Egypt</p>
-        <div class="mt-4 space-y-2 text-left text-sm">
-          <div><strong>Email:</strong> <a href="mailto:your.email@example.com" class="text-sky-600">your.email@example.com</a></div>
-          <div><strong>LinkedIn:</strong> <span class="text-slate-600">(add your LinkedIn)</span></div>
-          <div><strong>GitHub:</strong> <span class="text-slate-600">(add your GitHub)</span></div>
-        </div>
-      </div>
-    </section>
+  <section id="projects">
+    <h2>Projects</h2>
 
-    <!-- Projects -->
-    <section id="projects" class="mb-10">
-      <h3 class="text-2xl font-bold mb-4">Projects</h3>
-      <div class="grid md:grid-cols-2 gap-6">
+    <h3>🧪 A/B Test Analysis</h3>
+    <ul>
+      <li>Conducted an A/B test to evaluate a new web page’s impact on user conversion rates.</li>
+      <li>Applied statistical analysis using Python (Pandas, NumPy, SciPy).</li>
+      <li>Performed hypothesis testing and logistic regression to validate results.</li>
+      <li><strong>Result:</strong> The new page led to a statistically significant increase in conversions.</li>
+    </ul>
 
-        <!-- Project 1 -->
-        <article class="card">
-          <div class="flex items-start justify-between">
-            <h4 class="text-xl font-semibold">A/B Test — Web Page Conversion Analysis</h4>
-            <div class="text-xs text-slate-500">Stats • Python</div>
-          </div>
-          <p class="text-sm text-slate-600 mt-3">Evaluated the impact of a redesigned webpage on user conversion rates using controlled A/B testing and statistical modeling.</p>
-          <ul class="mt-3 text-sm space-y-1 text-slate-700">
-            <li><strong>Goal:</strong> Test whether the new page increases conversion rate.</li>
-            <li><strong>Tools:</strong> Python, pandas, NumPy, Matplotlib, logistic regression.</li>
-            <li><strong>Approach:</strong> Performed hypothesis testing, calculated p-values, and built a logistic regression model to estimate conversion likelihood.</li>
-            <li><strong>Result:</strong> Found a statistically significant uplift; recommended rollout of the new page.</li>
-          </ul>
-          <div class="mt-4 flex gap-2">
-            <span class="badge">A/B Testing</span>
-            <span class="badge">Hypothesis Testing</span>
-            <span class="badge">Logistic Regression</span>
-          </div>
-        </article>
+    <h3>🎵 Query a Digital Music Store Database</h3>
+    <ul>
+      <li>Used the <strong>Parch and Posey</strong> music store dataset.</li>
+      <li>Wrote complex SQL queries to analyze sales and customer behavior.</li>
+      <li>Aggregated and visualized data using Excel for business insights.</li>
+      <li>Extracted valuable conclusions that informed marketing strategies.</li>
+    </ul>
 
-        <!-- Project 2 -->
-        <article class="card">
-          <div class="flex items-start justify-between">
-            <h4 class="text-xl font-semibold">Digital Music Store — SQL & Excel Analysis</h4>
-            <div class="text-xs text-slate-500">SQL • Excel</div>
-          </div>
-          <p class="text-sm text-slate-600 mt-3">Analyzed the "Parch and Posey" music store dataset to extract customer, sales, and product insights.</p>
-          <ul class="mt-3 text-sm space-y-1 text-slate-700">
-            <li><strong>Goal:</strong> Identify top-selling artists, high-value customers, and seasonality patterns.</li>
-            <li><strong>Tools:</strong> SQL (joins, aggregations), Excel visualizations.</li>
-            <li><strong>Approach:</strong> Wrote complex queries to aggregate purchases, segmented customers, and built Excel charts to show trends.</li>
-            <li><strong>Result:</strong> Highlighted top products and customer segments for targeted marketing strategies.</li>
-          </ul>
-          <div class="mt-4 flex gap-2">
-            <span class="badge">SQL</span>
-            <span class="badge">Excel</span>
-            <span class="badge">Data Aggregation</span>
-          </div>
-        </article>
+    <h3>✈️ Flights Dashboard Visualization</h3>
+    <ul>
+      <li>Analyzed the <strong>U.S. Flights Dataset (2015)</strong>.</li>
+      <li>Built an interactive Tableau dashboard to visualize flight delays, routes, and performance.</li>
+      <li>Enabled data-driven exploration using Tableau filters and parameters.</li>
+      <li>Presented insights clearly to highlight delay patterns and trends.</li>
+    </ul>
 
-        <!-- Project 3 -->
-        <article class="card">
-          <div class="flex items-start justify-between">
-            <h4 class="text-xl font-semibold">US Flights Dashboard — Tableau</h4>
-            <div class="text-xs text-slate-500">Tableau • Visualization</div>
-          </div>
-          <p class="text-sm text-slate-600 mt-3">Built interactive dashboards to explore flight delays and airport performance using the 2015 US flights dataset.</p>
-          <ul class="mt-3 text-sm space-y-1 text-slate-700">
-            <li><strong>Goal:</strong> Understand delay causes, airline performance, and airport bottlenecks.</li>
-            <li><strong>Tools:</strong> Tableau — maps, time-series, bar charts, filters.</li>
-            <li><strong>Approach:</strong> Designed an interactive dashboard allowing stakeholders to filter by airline, airport, and delay cause.</li>
-            <li><strong>Result:</strong> Determined weather as leading cause of delays and identified underperforming airports for operational review.</li>
-          </ul>
-          <div class="mt-4 flex gap-2">
-            <span class="badge">Tableau</span>
-            <span class="badge">Data Viz</span>
-            <span class="badge">Dashboard</span>
-          </div>
-        </article>
+    <h3>📈 Investigate a Dataset</h3>
+    <ul>
+      <li>Cleaned, transformed, and analyzed a real-world dataset using Python.</li>
+      <li>Formulated key business questions and visualized the answers.</li>
+      <li>Used NumPy, Pandas, Seaborn, and Matplotlib for efficient EDA.</li>
+      <li>Effectively communicated findings with data storytelling.</li>
+    </ul>
+  </section>
 
-        <!-- Project 4 -->
-        <article class="card">
-          <div class="flex items-start justify-between">
-            <h4 class="text-xl font-semibold">Exploratory Data Analysis — Dataset Investigation</h4>
-            <div class="text-xs text-slate-500">Python • EDA</div>
-          </div>
-          <p class="text-sm text-slate-600 mt-3">Performed full data cleaning and exploratory analysis to answer a targeted question using Python libraries.</p>
-          <ul class="mt-3 text-sm space-y-1 text-slate-700">
-            <li><strong>Goal:</strong> Formulate and answer a specific research question from a raw dataset.</li>
-            <li><strong>Tools:</strong> Python, pandas, NumPy, seaborn, Matplotlib.</li>
-            <li><strong>Approach:</strong> Cleaned missing values, engineered features, and used plots to reveal relationships.</li>
-            <li><strong>Result:</strong> Delivered a clear, data-backed conclusion with supporting visuals and recommendations.</li>
-          </ul>
-          <div class="mt-4 flex gap-2">
-            <span class="badge">pandas</span>
-            <span class="badge">seaborn</span>
-            <span class="badge">Data Cleaning</span>
-          </div>
-        </article>
+  <section id="tools">
+    <h2>Tools & Technologies</h2>
+    <ul>
+      <li><strong>Languages:</strong> Python, SQL</li>
+      <li><strong>Libraries:</strong> Pandas, NumPy, Matplotlib, Seaborn, SciPy</li>
+      <li><strong>Visualization:</strong> Tableau, Excel</li>
+      <li><strong>Skills:</strong> Data Cleaning, Hypothesis Testing, Dashboard Design, Statistical Analysis</li>
+    </ul>
+  </section>
 
-      </div>
-    </section>
-
-    <!-- Skills -->
-    <section id="skills" class="mb-10 card">
-      <h3 class="text-2xl font-bold mb-3">Skills</h3>
-      <div class="grid md:grid-cols-2 gap-6">
-        <div>
-          <h4 class="font-semibold">Technical</h4>
-          <ul class="mt-2 space-y-2 text-sm text-slate-700">
-            <li>Python (pandas, NumPy, Matplotlib, seaborn)</li>
-            <li>SQL — data querying, joins, window functions</li>
-            <li>Tableau — dashboards & interactive visualizations</li>
-            <li>Excel — pivot tables, charts, data cleaning</li>
-            <li>Statistics — hypothesis testing, A/B testing, regression</li>
-          </ul>
-        </div>
-        <div>
-          <h4 class="font-semibold">Soft / Product</h4>
-          <ul class="mt-2 space-y-2 text-sm text-slate-700">
-            <li>Data storytelling & visual communication</li>
-            <li>Problem framing & hypothesis-driven analysis</li>
-            <li>Collaboration with stakeholders to translate needs into metrics</li>
-            <li>Delivering clear, actionable recommendations</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact" class="card">
-      <h3 class="text-2xl font-bold mb-3">Contact</h3>
-      <p class="text-sm text-slate-700">I’m open to job opportunities, freelance projects, and collaborations. Reach out and let’s talk about how data can power better decisions.</p>
-      <div class="mt-4 grid md:grid-cols-2 gap-4">
-        <div>
-          <strong>Email</strong>
-          <div class="text-sm mt-1"><a href="mailto:amre2809@gmail.com" class="text-sky-600">amre2809@gmail.com</a></div>
-        </div>
-        <div>
-          <strong>Links</strong>
-          <div class="text-sm mt-1 text-slate-600">LinkedIn: https://www.linkedin.com/in/amrehab1/ • GitHub: https://github.com/Amrehab2/Amr_Ehab_Portfolio</div>
-        </div>
-      </div>
-      <div class="mt-6">
-        <a class="inline-block px-5 py-2 rounded-full bg-sky-600 text-white font-medium hover:opacity-95" href="mailto:amre2809@gmail.com">Email Me</a>
-      </div>
-    </section>
-
-    <footer class="mt-10 text-center text-sm text-slate-500">
-      © <span id="year"></span> Amr Ehab — Data Analyst
-    </footer>
-  </main>
-
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+  <footer>
+    <p>📧 Contact: <a href="mailto:amre2809@gmail.com">amre2809@gmail.com</a></p>
+    <p>🔗 LinkedIn: <a href="https://linkedin.com/in/amrehab" target="_blank">linkedin.com/in/amrehab</a></p>
+    <p>© 2025 Amr Ehab | Data Analytics Portfolio</p>
+  </footer>
 </body>
 </html>
