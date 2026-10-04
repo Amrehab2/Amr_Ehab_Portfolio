@@ -1,128 +1,1195 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Amr Ehab | Data Analytics Portfolio</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    html {
-      scroll-behavior: smooth;
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Amr Ehab | Data Analyst</title>
+<meta name="description" content="Amr Ehab is a data analyst working in Python, SQL, Excel and Tableau. Case studies in A/B testing, SQL analysis, dashboards and exploratory analysis.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#EDF0EB; --surface:#F8FAF6; --ink:#16202A; --muted:#55616D; --rule:#C9D0C6;
+  --accent:#2648D8; --accent-soft:#C7D2FA; --control:#7A8591; --good:#1D7A4E; --warn-bg:#FFF6DB; --warn-ink:#6B4E00;
+  --grid:#DCE1D9;
+  color-scheme:light;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#10161F; --surface:#18202B; --ink:#E5E9EF; --muted:#9AA5B2; --rule:#2B3542;
+    --accent:#8AA4FF; --accent-soft:#2D3D7A; --control:#8D99A6; --good:#5FCB97; --warn-bg:#2D2716; --warn-ink:#F0D58A;
+    --grid:#232D3A; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#10161F; --surface:#18202B; --ink:#E5E9EF; --muted:#9AA5B2; --rule:#2B3542;
+  --accent:#8AA4FF; --accent-soft:#2D3D7A; --control:#8D99A6; --good:#5FCB97; --warn-bg:#2D2716; --warn-ink:#F0D58A;
+  --grid:#232D3A; color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:calc(72px + env(safe-area-inset-top,0px))}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  font-size:1.0625rem;line-height:1.6;-webkit-font-smoothing:antialiased;font-variant-numeric:tabular-nums}
+a{color:var(--accent)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+img,svg{max-width:100%}
+.wrap{max-width:1140px;margin:0 auto;padding:0 24px}
+h1,h2,h3{line-height:1.1;margin:0;letter-spacing:-.02em}
+h2{font-size:clamp(1.9rem,3.6vw,2.6rem);font-weight:800}
+h3{font-size:1.25rem;font-weight:700;letter-spacing:-.01em}
+p{margin:0 0 1em}
+.lede{font-size:1.2rem;color:var(--muted);max-width:60ch}
+
+/* Nav */
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--rule)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+.brand{font-weight:800;font-size:1.1rem;color:var(--ink);text-decoration:none;letter-spacing:-.01em}
+.brand span{color:var(--muted);font-weight:500}
+.links{display:flex;align-items:center;gap:28px}
+.links a{color:var(--ink);text-decoration:none;font-weight:500;font-size:.98rem}
+.links a:hover{color:var(--accent)}
+.icon-btn{background:none;border:1px solid var(--rule);color:var(--ink);width:38px;height:38px;border-radius:10px;cursor:pointer;
+  display:inline-grid;place-items:center;font:inherit}
+.icon-btn:hover{border-color:var(--ink)}
+.menu-btn{display:none}
+@media (max-width:760px){
+  .menu-btn{display:inline-grid}
+  .links{position:absolute;top:64px;left:0;right:0;flex-direction:column;align-items:flex-start;gap:0;
+    background:var(--surface);border-bottom:1px solid var(--rule);padding:8px 24px 16px;display:none}
+  .links.open{display:flex}
+  .links a{padding:12px 0;width:100%;border-bottom:1px solid var(--rule)}
+  .links .icon-btn{margin-top:12px}
+}
+
+/* Hero */
+.hero{padding:72px 0 64px;border-bottom:1px solid var(--rule)}
+.hero-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:56px;align-items:center}
+.who{font-weight:600;color:var(--muted);margin-bottom:18px;font-size:1.05rem}
+.hero h1{font-size:clamp(2.6rem,6vw,4.4rem);font-weight:800;letter-spacing:-.035em;line-height:1.02;margin-bottom:22px}
+.hero .lede{margin-bottom:30px}
+.actions{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 20px;border-radius:12px;font-weight:600;text-decoration:none;font-size:1rem;
+  border:1.5px solid var(--ink);color:var(--ink);transition:background .15s,color .15s}
+.btn.primary{background:var(--ink);color:var(--bg)}
+.btn:hover{background:var(--accent);border-color:var(--accent);color:#fff}
+.figure{background:var(--surface);border:1px solid var(--rule);border-radius:18px;padding:22px 22px 18px}
+.figure-title{font-weight:700;font-size:1.02rem;margin-bottom:2px}
+.figure-sub{color:var(--muted);font-size:.92rem;margin-bottom:10px}
+.chart{width:100%;min-height:200px}
+.chart svg{display:block}
+.chart text{font-family:inherit}
+.legend{display:flex;flex-wrap:wrap;gap:16px;font-size:.88rem;color:var(--muted);margin-top:8px}
+.sw{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+@media (max-width:900px){.hero-grid{grid-template-columns:1fr;gap:40px}.hero{padding-top:48px}}
+
+/* Sections */
+section{padding:88px 0}
+.sec-head{display:grid;grid-template-columns:1fr 1.4fr;gap:40px;margin-bottom:48px;align-items:end}
+.sec-head p{color:var(--muted);margin:0;max-width:56ch}
+@media (max-width:820px){.sec-head{grid-template-columns:1fr;gap:14px}}
+
+/* Toolkit */
+.tools{display:grid;grid-template-columns:repeat(5,1fr);border-top:2px solid var(--ink)}
+.tool{padding:22px 20px 8px 0;border-right:1px solid var(--rule)}
+.tool+.tool{padding-left:20px}
+.tool:last-child{border-right:0}
+.tool h3{margin-bottom:8px}
+.tool p{color:var(--muted);font-size:.96rem;margin:0}
+@media (max-width:960px){.tools{grid-template-columns:repeat(2,1fr)}.tool,.tool+.tool{padding:20px 16px 20px 0;border-right:0;border-bottom:1px solid var(--rule)}}
+@media (max-width:520px){.tools{grid-template-columns:1fr}}
+
+/* Case study */
+.case{background:var(--surface);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.case-head{max-width:820px;margin-bottom:40px}
+.case-head .tag{display:inline-block;font-weight:600;font-size:.9rem;color:var(--accent);margin-bottom:14px}
+.case-head h2{margin-bottom:18px}
+.verdict{display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:start;background:var(--bg);border:1px solid var(--rule);
+  border-left:6px solid var(--good);border-radius:14px;padding:22px 24px;margin-bottom:56px;max-width:920px}
+.verdict-mark{width:40px;height:40px;border-radius:50%;background:var(--good);color:var(--surface);display:grid;place-items:center;font-weight:800}
+.verdict h3{margin-bottom:6px}
+.verdict p{margin:0;color:var(--ink)}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);margin-bottom:56px}
+.kpi{padding:22px 18px 22px 0}
+.kpi+.kpi{padding-left:18px;border-left:1px solid var(--rule)}
+.kpi b{display:block;font-size:clamp(1.6rem,3vw,2.2rem);font-weight:800;letter-spacing:-.02em;line-height:1.1}
+.kpi span{color:var(--muted);font-size:.93rem}
+@media (max-width:760px){.kpis{grid-template-columns:repeat(2,1fr)}.kpi:nth-child(3){padding-left:0;border-left:0}.kpi:nth-child(n+3){border-top:1px solid var(--rule)}}
+.story{display:grid;grid-template-columns:220px 1fr;gap:40px;padding:36px 0;border-top:1px solid var(--rule)}
+.story:first-of-type{border-top:0}
+.story h3{font-size:1.15rem}
+.story-body{max-width:72ch}
+.story-body ul{padding-left:1.2em;margin:0 0 1em}
+.story-body li{margin-bottom:.45em}
+@media (max-width:820px){.story{grid-template-columns:1fr;gap:12px}}
+.charts2{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:8px 0 24px}
+@media (max-width:860px){.charts2{grid-template-columns:1fr}}
+.table-wrap{overflow-x:auto;margin:8px 0 18px}
+table{border-collapse:collapse;width:100%;min-width:460px;font-size:.98rem}
+th,td{text-align:left;padding:11px 14px 11px 0;border-bottom:1px solid var(--rule)}
+th{font-weight:600;color:var(--muted);font-size:.9rem}
+td.num,th.num{text-align:right;padding-right:0;padding-left:14px}
+.note{background:var(--warn-bg);color:var(--warn-ink);border-radius:10px;padding:14px 16px;font-size:.96rem}
+.files{display:flex;flex-wrap:wrap;gap:12px;margin-top:8px}
+
+/* Projects */
+.proj{display:grid;grid-template-columns:1.1fr 1.6fr auto;gap:32px;padding:30px 0;border-top:1px solid var(--rule);align-items:start}
+.proj:last-child{border-bottom:1px solid var(--rule)}
+.proj h3{font-size:1.4rem;margin-bottom:6px}
+.proj .q{color:var(--muted);font-style:italic;margin:0}
+.proj p{margin:0 0 12px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
+.chips li{font-size:.85rem;font-weight:600;padding:4px 10px;border-radius:999px;background:var(--accent-soft);color:var(--ink)}
+.proj .btn{white-space:nowrap;padding:10px 16px}
+@media (max-width:900px){.proj{grid-template-columns:1fr;gap:12px}}
+
+/* Approach */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;counter-reset:s;list-style:none;padding:0;margin:0}
+.steps li{border-top:2px solid var(--ink);padding-top:18px;counter-increment:s}
+.steps li::before{content:counter(s);display:block;font-size:2.6rem;font-weight:800;color:var(--accent);line-height:1;margin-bottom:14px;letter-spacing:-.03em}
+.steps p{color:var(--muted);font-size:.98rem;margin:8px 0 0}
+@media (max-width:900px){.steps{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.steps{grid-template-columns:1fr}}
+
+/* Contact */
+.contact{background:var(--ink);color:var(--bg)}
+.contact h2{font-size:clamp(2.2rem,5vw,3.6rem);margin-bottom:18px;max-width:18ch}
+.contact p{color:color-mix(in srgb,var(--bg) 75%,transparent);max-width:52ch;font-size:1.15rem}
+.contact .btn{border-color:var(--bg);color:var(--ink);background:var(--bg);margin-top:12px;font-size:1.1rem}
+.contact .btn:hover{background:var(--accent);border-color:var(--accent);color:#fff}
+footer{background:var(--ink);color:color-mix(in srgb,var(--bg) 60%,transparent);font-size:.9rem;padding:22px 0 30px;border-top:1px solid color-mix(in srgb,var(--bg) 18%,transparent)}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+footer a{color:inherit}
+
+/* About */
+.about{display:grid;grid-template-columns:1.3fr 1fr;gap:56px;align-items:start}
+.about-text p{font-size:1.15rem;max-width:60ch}
+.facts{margin:0;border-top:2px solid var(--ink)}
+.facts div{display:grid;grid-template-columns:120px 1fr;gap:16px;padding:16px 0;border-bottom:1px solid var(--rule)}
+.facts dt{color:var(--muted);font-weight:500}
+.facts dd{margin:0;font-weight:600}
+@media (max-width:860px){.about{grid-template-columns:1fr;gap:32px}}
+
+/* Skills matrix */
+.matrix-wrap{overflow-x:auto;margin-top:56px}
+.matrix-intro{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+.matrix-intro p{color:var(--muted);margin:0;font-size:.96rem}
+.matrix{min-width:640px}
+.matrix th{vertical-align:bottom}
+.matrix th.p{text-align:center;padding:10px 8px;font-size:.88rem;line-height:1.25;width:15%}
+.matrix th.p a{color:var(--ink);text-decoration:none}
+.matrix th.p a:hover{color:var(--accent)}
+.matrix td{text-align:center;padding:10px 8px}
+.matrix td:first-child{text-align:left;font-weight:600;padding-left:0}
+.matrix tbody tr:hover{background:color-mix(in srgb,var(--accent-soft) 35%,transparent)}
+.dot{display:inline-block;width:14px;height:14px;border-radius:50%;background:var(--accent)}
+.dot.off{background:none;border:1.5px solid var(--rule);width:8px;height:8px}
+
+/* Project case blocks */
+.pcase{display:grid;grid-template-columns:1fr 1fr;gap:48px;padding:56px 0;border-top:1px solid var(--rule);align-items:start}
+.pcase:last-of-type{border-bottom:1px solid var(--rule)}
+.pcase.flip .pvis{order:-1}
+.pcase h3{font-size:clamp(1.5rem,2.6vw,2rem);font-weight:800;letter-spacing:-.02em;margin-bottom:8px}
+.pcase .q{color:var(--muted);font-style:italic;font-size:1.1rem;margin-bottom:22px}
+.pcase dl{margin:0 0 22px}
+.pcase dl div{padding:12px 0;border-top:1px solid var(--rule)}
+.pcase dt{font-weight:700;margin-bottom:4px}
+.pcase dd{margin:0;color:var(--ink);max-width:62ch}
+.pcase .chips{margin-bottom:22px}
+.pvis{background:var(--surface);border:1px solid var(--rule);border-radius:18px;padding:22px}
+.pvis-title{font-weight:700;margin-bottom:2px}
+.pvis-sub{color:var(--muted);font-size:.92rem;margin-bottom:14px}
+.pvis svg{display:block;width:100%;height:auto}
+.pvis + .pvis{margin-top:16px}
+@media (max-width:900px){.pcase{grid-template-columns:1fr;gap:28px}.pcase.flip .pvis{order:0}}
+pre.code{margin:0;overflow-x:auto;background:var(--bg);border:1px solid var(--rule);border-radius:12px;padding:16px 18px;
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.86rem;line-height:1.55;color:var(--ink)}
+.code .k{color:var(--accent);font-weight:600}
+.code .c{color:var(--muted);font-style:italic}
+/* SVG diagram classes */
+.d-box{fill:var(--bg);stroke:var(--rule);stroke-width:1.5}
+.d-box.hl{fill:var(--accent-soft);stroke:var(--accent)}
+.d-line{stroke:var(--rule);stroke-width:2;fill:none}
+.d-line.hl{stroke:var(--accent)}
+.d-t{fill:var(--ink);font-size:13px;font-weight:600;font-family:inherit}
+.d-s{fill:var(--muted);font-size:11.5px;font-family:inherit}
+.d-panel{fill:var(--bg);stroke:var(--rule);stroke-width:1.5}
+.d-ink{fill:var(--accent);opacity:.85}
+.d-soft{fill:var(--control);opacity:.45}
+.d-stroke{stroke:var(--accent);stroke-width:2.5;fill:none}
+/* EDA flow */
+.flow{display:flex;flex-wrap:wrap;gap:8px;align-items:center;list-style:none;padding:0;margin:0}
+.flow li{display:flex;align-items:center;gap:8px}
+.flow span{padding:10px 14px;border-radius:10px;background:var(--bg);border:1px solid var(--rule);font-weight:600;font-size:.95rem}
+.flow li:not(:last-child)::after{content:"";width:16px;height:2px;background:var(--rule)}
+.flow-notes{margin:16px 0 0;padding-left:1.2em;color:var(--muted);font-size:.95rem}
+.flow-notes li{margin-bottom:6px}
+.flow-notes b{color:var(--ink)}
+
+/* ---------- Views ---------- */
+[data-view][hidden]{display:none !important}
+
+/* ---------- Project tabs on home ---------- */
+.tabs{display:flex;gap:2px;border-bottom:1px solid var(--rule);overflow-x:auto;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{background:none;border:0;border-bottom:3px solid transparent;margin-bottom:-1px;padding:16px 20px;font:inherit;font-weight:600;
+  color:var(--muted);cursor:pointer;white-space:nowrap;display:flex;flex-direction:column;align-items:flex-start;gap:2px;text-align:left}
+.tab small{font-weight:500;font-size:.82rem;color:var(--muted)}
+.tab:hover{color:var(--ink)}
+.tab[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--accent)}
+.tabpanel{display:grid;grid-template-columns:1.4fr 1fr;gap:48px;padding:40px 0 8px}
+.tabpanel[hidden]{display:none}
+.tabpanel h3{font-size:clamp(1.6rem,3vw,2.2rem);font-weight:800;letter-spacing:-.02em;margin-bottom:10px}
+.tabpanel .q{color:var(--muted);font-style:italic;font-size:1.1rem;margin-bottom:18px}
+.tabpanel p{max-width:62ch}
+.tabpanel .chips{margin:18px 0 26px}
+.keyfacts{margin:0;border-top:2px solid var(--ink)}
+.keyfacts div{padding:16px 0;border-bottom:1px solid var(--rule)}
+.keyfacts dt{color:var(--muted);font-size:.92rem}
+.keyfacts dd{margin:2px 0 0;font-weight:700;font-size:1.15rem}
+@media (max-width:860px){.tabpanel{grid-template-columns:1fr;gap:28px}}
+
+/* ---------- Project pages ---------- */
+.ptabs-bar{background:var(--surface);border-bottom:1px solid var(--rule)}
+.ptabs{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none}
+.ptabs::-webkit-scrollbar{display:none}
+.ptabs a{padding:14px 18px;color:var(--muted);text-decoration:none;font-weight:600;font-size:.95rem;white-space:nowrap;border-bottom:3px solid transparent}
+.ptabs a:hover{color:var(--ink)}
+.ptabs a[aria-current="page"]{color:var(--ink);border-bottom-color:var(--accent)}
+.phead{padding:48px 0 44px;border-bottom:1px solid var(--rule)}
+.crumbs{display:flex;flex-wrap:wrap;gap:8px;font-size:.92rem;color:var(--muted);margin-bottom:26px;list-style:none;padding:0}
+.crumbs li:not(:last-child)::after{content:"/";margin-left:8px;color:var(--rule)}
+.crumbs a{color:var(--muted)}
+.crumbs a:hover{color:var(--accent)}
+.phead h1{font-size:clamp(2.4rem,5.5vw,4rem);font-weight:800;letter-spacing:-.035em;line-height:1.03;margin-bottom:16px;max-width:18ch}
+.phead .q{font-size:1.25rem;color:var(--muted);max-width:56ch;margin-bottom:34px}
+.pmeta{display:grid;grid-template-columns:repeat(4,1fr);margin:0 0 30px;border-top:2px solid var(--ink)}
+.pmeta div{padding:16px 18px 16px 0}
+.pmeta div+div{padding-left:18px;border-left:1px solid var(--rule)}
+.pmeta dt{color:var(--muted);font-size:.9rem;margin-bottom:4px}
+.pmeta dd{margin:0;font-weight:600}
+@media (max-width:820px){.pmeta{grid-template-columns:1fr 1fr}.pmeta div:nth-child(3){padding-left:0;border-left:0}.pmeta div:nth-child(n+3){border-top:1px solid var(--rule)}}
+.playout{display:grid;grid-template-columns:200px 1fr;gap:56px;padding:24px 0 72px}
+.toc{position:sticky;top:calc(84px + env(safe-area-inset-top,0px));align-self:start;padding-top:40px}
+.toc p{font-weight:700;margin-bottom:10px;font-size:.95rem}
+.toc ol{list-style:none;padding:0;margin:0;border-left:2px solid var(--rule)}
+.toc a{display:block;padding:6px 0 6px 14px;margin-left:-2px;border-left:2px solid transparent;color:var(--muted);text-decoration:none;font-size:.95rem}
+.toc a:hover{color:var(--ink);border-left-color:var(--ink)}
+@media (max-width:900px){.playout{grid-template-columns:1fr;gap:0}.toc{display:none}}
+.psec{padding:40px 0;border-top:1px solid var(--rule);scroll-margin-top:calc(80px + env(safe-area-inset-top,0px))}
+.psec:first-child{border-top:0}
+.psec > h2{font-size:clamp(1.5rem,2.6vw,1.9rem);margin-bottom:18px}
+.psec > p,.psec > ul,.psec > ol{max-width:70ch}
+.psec ul,.psec ol{padding-left:1.2em}
+.psec li{margin-bottom:.5em}
+.numbered{list-style:none;padding:0 !important;counter-reset:n;max-width:70ch}
+.numbered li{counter-increment:n;display:grid;grid-template-columns:44px 1fr;gap:4px;padding:14px 0;border-top:1px solid var(--rule);margin:0}
+.numbered li::before{content:counter(n);font-weight:800;font-size:1.3rem;color:var(--accent);line-height:1.3}
+.numbered b{display:block}
+.pnext{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding-bottom:88px}
+.pnext a{display:block;padding:22px 24px;border:1px solid var(--rule);border-radius:16px;background:var(--surface);text-decoration:none;color:var(--ink)}
+.pnext a:hover{border-color:var(--accent)}
+.pnext small{display:block;color:var(--muted);font-size:.9rem;margin-bottom:4px}
+.pnext b{font-size:1.2rem}
+.pnext a:last-child{text-align:right}
+@media (max-width:600px){.pnext{grid-template-columns:1fr}.pnext a:last-child{text-align:left}}
+
+/* ================= Professional refinement layer ================= */
+:root{--bg:#F5F7FA;--surface:#FFFFFF;--ink:#0F1B2D;--muted:#5B6878;--rule:#E2E7EE;--accent:#1D4ED8;--accent-soft:#E4EBFC;
+  --control:#94A0AE;--good:#15803D;--grid:#EEF1F5;--warn-bg:#FEF7E0;--warn-ink:#6B4E00;
+  --shadow:0 1px 2px rgba(15,27,45,.04),0 8px 24px rgba(15,27,45,.06);--navy:#0F1B2D}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0D1420;--surface:#141D2B;--ink:#E7ECF3;--muted:#98A4B3;--rule:#253043;
+  --accent:#7EA2FF;--accent-soft:#1E2C4D;--control:#7D8999;--good:#4ADE80;--grid:#18222F;--warn-bg:#2A2414;--warn-ink:#F0D58A;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.25);--navy:#0A101A}}
+:root[data-theme="dark"]{--bg:#0D1420;--surface:#141D2B;--ink:#E7ECF3;--muted:#98A4B3;--rule:#253043;
+  --accent:#7EA2FF;--accent-soft:#1E2C4D;--control:#7D8999;--good:#4ADE80;--grid:#18222F;--warn-bg:#2A2414;--warn-ink:#F0D58A;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.25);--navy:#0A101A}
+
+body{font-size:1.04rem;line-height:1.65}
+h1,h2,h3{font-weight:700}
+h2{font-weight:700;letter-spacing:-.025em}
+.hero h1,.phead h1{font-weight:700;letter-spacing:-.03em}
+section{padding:96px 0}
+
+/* Nav */
+.nav{background:color-mix(in srgb,var(--surface) 90%,transparent)}
+.brand{display:flex;align-items:center;gap:10px}
+.mono{width:34px;height:34px;border-radius:9px;background:var(--accent);color:#fff;display:grid;place-items:center;font-weight:700;font-size:.9rem;letter-spacing:.02em}
+.links a.nav-cta{background:var(--accent);color:#fff;padding:8px 16px;border-radius:9px;font-weight:600}
+.links a.nav-cta:hover{color:#fff;filter:brightness(.92)}
+@media (max-width:760px){.links a.nav-cta{width:auto;margin-top:12px;border-bottom:0;padding:10px 16px}}
+
+/* Buttons */
+.btn{border-radius:10px;border:1px solid var(--rule);background:var(--surface);color:var(--ink);box-shadow:0 1px 2px rgba(15,27,45,.05)}
+.btn:hover{background:var(--surface);color:var(--ink);border-color:var(--ink)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+.btn.primary:hover{background:var(--accent);color:#fff;border-color:var(--accent);filter:brightness(.92)}
+
+/* Hero with faint graph-paper grid */
+.hero,.phead{background:
+  linear-gradient(var(--grid) 1px,transparent 1px) 0 0/32px 32px,
+  linear-gradient(90deg,var(--grid) 1px,transparent 1px) 0 0/32px 32px,var(--surface)}
+.hero{padding:80px 0 72px}
+.status{display:inline-flex;align-items:center;gap:10px;padding:6px 14px 6px 12px;border:1px solid var(--rule);border-radius:999px;
+  background:var(--surface);font-size:.9rem;font-weight:500;margin-bottom:22px;box-shadow:0 1px 2px rgba(15,27,45,.05)}
+.status i{width:8px;height:8px;border-radius:50%;background:var(--good);box-shadow:0 0 0 3px color-mix(in srgb,var(--good) 22%,transparent)}
+.who{color:var(--accent);font-weight:600}
+.figure,.pvis{background:var(--surface);border:1px solid var(--rule);border-radius:16px;box-shadow:var(--shadow)}
+
+/* Proof strip */
+.proof{padding:0;background:var(--surface);border-bottom:1px solid var(--rule)}
+.proof-grid{display:grid;grid-template-columns:repeat(4,1fr)}
+.proof-grid div{padding:26px 24px}
+.proof-grid div+div{border-left:1px solid var(--rule)}
+.proof-grid b{display:block;font-size:1.8rem;font-weight:700;letter-spacing:-.02em;line-height:1.15}
+.proof-grid span{color:var(--muted);font-size:.93rem}
+@media (max-width:760px){.proof-grid{grid-template-columns:1fr 1fr}.proof-grid div:nth-child(3){border-left:0}.proof-grid div:nth-child(n+3){border-top:1px solid var(--rule)}}
+
+/* Skills */
+.tools{border-top:0;gap:16px}
+.tools .tool,.tools .tool+.tool{padding:22px;border:1px solid var(--rule);border-radius:14px;background:var(--surface);box-shadow:var(--shadow)}
+.tools .tool:last-child{border-right:1px solid var(--rule)}
+.matrix-wrap{background:var(--surface);border:1px solid var(--rule);border-radius:16px;padding:24px 28px;box-shadow:var(--shadow)}
+.facts{background:var(--surface);border:1px solid var(--rule);border-radius:16px;padding:6px 24px;box-shadow:var(--shadow)}
+.facts div:last-child{border-bottom:0}
+.steps li{background:var(--surface);border:1px solid var(--rule);border-top:3px solid var(--accent);border-radius:14px;padding:22px;box-shadow:var(--shadow)}
+
+/* Projects */
+.case{background:var(--surface)}
+.tabpanel{margin-top:24px;padding:36px;border:1px solid var(--rule);border-radius:16px;background:var(--bg)}
+.keyfacts{background:var(--surface);border:1px solid var(--rule);border-radius:14px;padding:4px 22px}
+.keyfacts div:last-child{border-bottom:0}
+.chips li{background:var(--accent-soft);color:var(--accent);font-weight:600}
+
+/* Project pages */
+.ptabs-bar{background:var(--surface)}
+.pmeta{background:var(--surface);border:1px solid var(--rule);border-radius:14px;box-shadow:var(--shadow)}
+.pmeta div{padding:16px 20px}
+.pmeta div+div{padding-left:20px}
+@media (max-width:820px){.pmeta div:nth-child(3){padding-left:20px}}
+.kpis{border:1px solid var(--rule);border-radius:16px;background:var(--surface);box-shadow:var(--shadow)}
+.kpis .kpi,.kpis .kpi+.kpi{padding:22px 24px}
+@media (max-width:760px){.kpis .kpi:nth-child(3){padding-left:24px}}
+.verdict{background:var(--surface);box-shadow:var(--shadow)}
+.table-wrap{background:var(--surface);border:1px solid var(--rule);border-radius:14px;padding:4px 20px}
+.table-wrap tr:last-child td{border-bottom:0}
+.toc ol{border-left-color:var(--rule)}
+.toc a:hover{border-left-color:var(--accent)}
+.pnext a{box-shadow:var(--shadow)}
+pre.code{background:var(--navy);color:#E7ECF3;border-color:var(--navy)}
+pre.code .k{color:#8DB0FF}
+pre.code .c{color:#8E9AAB}
+
+/* Contact and footer: fixed navy in both themes */
+.contact{background:var(--navy);color:#fff}
+.contact p{color:#B6C1CF}
+.contact .btn{background:#fff;color:#0F1B2D;border-color:#fff}
+.contact .btn:hover{background:#fff;color:#0F1B2D;filter:brightness(.94)}
+footer{background:var(--navy);color:#97A3B3;border-top:1px solid rgba(255,255,255,.08);padding:40px 0 30px}
+.foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:24px;padding-bottom:28px;border-bottom:1px solid rgba(255,255,255,.08);margin-bottom:20px}
+.foot b{display:block;color:#fff;font-size:1.05rem;margin-bottom:4px}
+.foot nav{display:flex;flex-wrap:wrap;gap:22px}
+.foot nav a{color:#C9D2DD;text-decoration:none}
+.foot nav a:hover{color:#fff}
+footer .foot-base{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:.88rem}
+</style>
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body>
 
-  <!-- Navbar -->
-  <nav class="bg-white shadow fixed w-full top-0 left-0 z-50">
-    <div class="max-w-6xl mx-auto flex justify-between items-center px-6 py-4">
-      <h1 class="font-bold text-xl text-blue-700">Amr Ehab</h1>
-      <div class="space-x-6 text-gray-700 font-medium">
-        <a href="#about" class="hover:text-blue-700">About</a>
-        <a href="#projects" class="hover:text-blue-700">Projects</a>
-        <a href="#contact" class="hover:text-blue-700">Contact</a>
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top"><span class="mono" aria-hidden="true">AE</span>Amr Ehab <span>Data Analyst</span></a>
+    <button class="icon-btn menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+      <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M2 4h14M2 9h14M2 14h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+    <nav class="links" id="navLinks">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#approach">Approach</a>
+      <button class="icon-btn" id="themeBtn" aria-label="Switch colour theme" title="Switch colour theme">
+        <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9 7 7 0 0 1-9-9z" fill="currentColor"/></svg>
+      </button>
+      <a class="nav-cta" href="#contact">Contact me</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ================= HOME ================= -->
+<main data-view="home" id="top">
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="status"><i aria-hidden="true"></i>Open to data analyst roles</span>
+      <p class="who">Amr Ehab, data analyst</p>
+      <h1>Clean data, honest tests, clear decisions.</h1>
+      <p class="lede">I use Python, SQL, Excel and Tableau to answer the questions a business actually has, and I report what the data shows, including when the answer is “don’t ship it.”</p>
+      <div class="actions">
+        <a class="btn primary" href="#projects">See my projects</a>
+        <a class="btn" href="mailto:amre2809@gmail.com">Email me</a>
       </div>
     </div>
+    <figure class="figure" style="margin:0">
+      <div class="figure-title">Did the new landing page lift conversions?</div>
+      <div class="figure-sub">10,000 simulated differences if the two pages performed the same, against the difference observed in my A/B test.</div>
+      <div class="chart" id="histChart" role="img" aria-label="Histogram of simulated conversion differences centred on zero, with the observed difference of minus 0.16 percentage points inside the bulk of the distribution."></div>
+      <div class="legend">
+        <span><i class="sw" style="background:var(--accent)"></i>At least as good as observed (<b class="shareLbl">90.5%</b>)</span>
+        <span><i class="sw" style="background:var(--control)"></i>Worse than observed</span>
+      </div>
+    </figure>
+  </div>
+</section>
+
+<section class="proof" aria-label="Highlights">
+  <div class="wrap proof-grid">
+    <div><b>4</b><span>end-to-end projects</span></div>
+    <div><b>290K+</b><span>experiment users analysed</span></div>
+    <div><b>5.8M</b><span>flight records visualised</span></div>
+    <div><b>Python, SQL</b><span>plus Excel and Tableau</span></div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap about">
+    <div class="about-text">
+      <h2 style="margin-bottom:24px">About me</h2>
+      <p>I’m a data analyst who likes problems that start with a messy spreadsheet and end with a decision. Most of my time goes into the unglamorous part, cleaning and checking data, because that’s where analyses usually go wrong.</p>
+      <p>I care about two things: getting the numbers right, and explaining them so the people who have to act on them can. That means picking the right method, confirming results more than one way, and saying plainly when the data doesn’t support the answer someone hoped for.</p>
+    </div>
+    <dl class="facts">
+      <div><dt>Role</dt><dd>Data analyst</dd></div>
+      <div><dt>Focus</dt><dd>Business and product analytics, experimentation, dashboards</dd></div>
+      <div><dt>Core stack</dt><dd>Python, SQL, Excel, Tableau</dd></div>
+      <div><dt>Open to</dt><dd>Full-time analyst roles and freelance projects</dd></div>
+      <div><dt>Contact</dt><dd><a href="mailto:amre2809@gmail.com">amre2809@gmail.com</a></dd></div>
+    </dl>
+  </div>
+</section>
+
+<section id="skills" style="padding-top:24px">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Skills</h2>
+      <p>The tools I use day to day, what I use each one for, and the projects where you can see them in action.</p>
+    </div>
+    <div class="tools">
+      <div class="tool"><h3>Python</h3><p>Pandas for cleaning and reshaping, Statsmodels for testing and regression, Matplotlib and Seaborn for charts.</p></div>
+      <div class="tool"><h3>SQL</h3><p>Joins and aggregations across relational tables to build KPIs and rank products and customers.</p></div>
+      <div class="tool"><h3>Excel</h3><p>Pivot tables, KPI tracking and quick charts for stakeholders who live in spreadsheets.</p></div>
+      <div class="tool"><h3>Tableau</h3><p>Interactive dashboards with filters, so people can explore trends without asking for a new report.</p></div>
+      <div class="tool"><h3>Statistics</h3><p>Hypothesis tests, simulation, confidence intervals and logistic regression.</p></div>
+    </div>
+    <div class="matrix-wrap">
+      <div class="matrix-intro">
+        <h3>Where each skill shows up</h3>
+        <p>Select a project to open its page.</p>
+      </div>
+      <table class="matrix">
+        <thead><tr>
+          <th>Skill</th>
+          <th class="p"><a href="#/projects/ab-test">A/B test analysis</a></th>
+          <th class="p"><a href="#/projects/music-store">Music store analysis</a></th>
+          <th class="p"><a href="#/projects/us-flights">US flights dashboard</a></th>
+          <th class="p"><a href="#/projects/investigate-dataset">Investigate a dataset</a></th>
+        </tr></thead>
+        <tbody id="matrixBody"></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section id="projects" class="case">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Projects</h2>
+      <p>Four end-to-end projects across experimentation, SQL, dashboards and exploratory analysis. Pick a tab for a summary, then open the full project page.</p>
+    </div>
+
+    <div class="tabs" role="tablist" aria-label="Projects">
+      <button class="tab" role="tab" id="tab-ab" aria-controls="panel-ab" aria-selected="true">A/B Test Analysis<small>Python, statistics</small></button>
+      <button class="tab" role="tab" id="tab-music" aria-controls="panel-music" aria-selected="false" tabindex="-1">Music Store Analysis<small>SQL, Excel</small></button>
+      <button class="tab" role="tab" id="tab-flights" aria-controls="panel-flights" aria-selected="false" tabindex="-1">US Flights Dashboard<small>Tableau</small></button>
+      <button class="tab" role="tab" id="tab-eda" aria-controls="panel-eda" aria-selected="false" tabindex="-1">Investigate a Dataset<small>Python, EDA</small></button>
+    </div>
+
+    <div class="tabpanel" role="tabpanel" id="panel-ab" aria-labelledby="tab-ab">
+      <div>
+        <h3>A/B Test Analysis</h3>
+        <p class="q">Should the company launch its new landing page?</p>
+        <p>Analysed a three-week experiment with 290,584 users using simulation, a two-proportion z-test and logistic regression. All three agreed: the new page didn’t improve conversions, so I recommended keeping the current one and sizing the next test properly.</p>
+        <ul class="chips"><li>Python</li><li>Pandas</li><li>Statsmodels</li><li>Hypothesis testing</li></ul>
+        <a class="btn primary" href="#/projects/ab-test">Open project page</a>
+      </div>
+      <dl class="keyfacts">
+        <div><dt>Users analysed</dt><dd>290,584</dd></div>
+        <div><dt>Conversion, old vs new</dt><dd>12.04% vs 11.88%</dd></div>
+        <div><dt>Outcome</dt><dd>Keep the current page (p = 0.905)</dd></div>
+      </dl>
+    </div>
+
+    <div class="tabpanel" role="tabpanel" id="panel-music" aria-labelledby="tab-music" hidden>
+      <div>
+        <h3>Digital Music Store Analysis</h3>
+        <p class="q">Which artists, genres and customers drive the store’s revenue?</p>
+        <p>Queried a relational sales database to calculate revenue by artist, genre and customer, ranked the top performers and tracked KPIs in Excel to guide where marketing should focus.</p>
+        <ul class="chips"><li>SQL</li><li>Joins and aggregation</li><li>Excel</li><li>KPI tracking</li></ul>
+        <a class="btn primary" href="#/projects/music-store">Open project page</a>
+      </div>
+      <dl class="keyfacts">
+        <div><dt>Data</dt><dd>Relational sales database, 7 linked tables</dd></div>
+        <div><dt>Method</dt><dd>Multi-table joins and aggregation</dd></div>
+        <div><dt>Delivered</dt><dd>Ranked revenue tables and Excel charts</dd></div>
+      </dl>
+    </div>
+
+    <div class="tabpanel" role="tabpanel" id="panel-flights" aria-labelledby="tab-flights" hidden>
+      <div>
+        <h3>US Flights Dashboard</h3>
+        <p class="q">Where and when do US flights get delayed or cancelled, and why?</p>
+        <p>Built an interactive Tableau dashboard on 2015 US domestic flight data, with linked views for the busiest airports, seasonal delay patterns and the leading causes of delay.</p>
+        <ul class="chips"><li>Tableau</li><li>Dashboard design</li><li>Calculated fields</li></ul>
+        <a class="btn primary" href="#/projects/us-flights">Open project page</a>
+      </div>
+      <dl class="keyfacts">
+        <div><dt>Data</dt><dd>~5.8 million flights, 2015</dd></div>
+        <div><dt>Core metrics</dt><dd>% delayed, % cancelled, average delay</dd></div>
+        <div><dt>Delivered</dt><dd>Interactive, filterable dashboard</dd></div>
+      </dl>
+    </div>
+
+    <div class="tabpanel" role="tabpanel" id="panel-eda" aria-labelledby="tab-eda" hidden>
+      <div>
+        <h3>Investigate a Dataset</h3>
+        <p class="q">Which patterns in the data hold up once it’s properly cleaned?</p>
+        <p>A full exploratory analysis in Python: assessing and cleaning raw data, then answering targeted questions with summary statistics and clear visuals, and stating the limits of what the data can show.</p>
+        <ul class="chips"><li>Python</li><li>Pandas</li><li>Matplotlib</li><li>Seaborn</li></ul>
+        <a class="btn primary" href="#/projects/investigate-dataset">Open project page</a>
+      </div>
+      <dl class="keyfacts">
+        <div><dt>Type</dt><dd>Exploratory data analysis</dd></div>
+        <div><dt>Method</dt><dd>Assess, clean, explore, conclude</dd></div>
+        <div><dt>Delivered</dt><dd>Written report with visuals</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section id="approach">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>How I work</h2>
+      <p>The same four steps on every project, whatever the tool.</p>
+    </div>
+    <ol class="steps">
+      <li><h3>Pin down the decision</h3><p>Agree on what question the analysis must answer and what result would change someone’s mind.</p></li>
+      <li><h3>Clean and check</h3><p>Find duplicates, mismatches and gaps before they quietly bias the result.</p></li>
+      <li><h3>Test, don’t eyeball</h3><p>Use the right statistical method and confirm the answer more than one way.</p></li>
+      <li><h3>Lead with the answer</h3><p>Put the recommendation first, then the evidence, in language stakeholders can act on.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <h2>Have data that needs answers?</h2>
+    <p>I’m open to data analyst roles and freelance projects. Tell me what you’re trying to decide and I’ll tell you how I’d approach it.</p>
+    <a class="btn" href="mailto:amre2809@gmail.com">amre2809@gmail.com</a>
+  </div>
+</section>
+</main>
+
+<!-- ================= PROJECT: A/B TEST ================= -->
+<main data-view="ab" hidden>
+  <div class="ptabs-bar"><nav class="wrap ptabs" aria-label="Projects">
+    <a href="#/projects/ab-test" aria-current="page">A/B Test Analysis</a><a href="#/projects/music-store">Music Store Analysis</a><a href="#/projects/us-flights">US Flights Dashboard</a><a href="#/projects/investigate-dataset">Investigate a Dataset</a>
+  </nav></div>
+  <header class="phead"><div class="wrap">
+    <ol class="crumbs"><li><a href="#top">Home</a></li><li><a href="#projects">Projects</a></li><li>A/B Test Analysis</li></ol>
+    <h1>A/B Test Analysis</h1>
+    <p class="q">Should the company launch its new landing page? A three-week experiment with 290,584 users, tested three ways.</p>
+    <dl class="pmeta">
+      <div><dt>Type</dt><dd>Experiment analysis</dd></div>
+      <div><dt>Tools</dt><dd>Python, Pandas, Statsmodels</dd></div>
+      <div><dt>Data</dt><dd>290,584 users, Jan 2017</dd></div>
+      <div><dt>Outcome</dt><dd>Keep the current page</dd></div>
+    </dl>
+    <div class="actions"><a class="btn primary" href="https://drive.google.com/drive/folders/1L4XB5JZyGlTndN6rTd_5Wewr4QU-jAi6" target="_blank" rel="noopener">View code and dataset</a></div>
+  </div></header>
+  <div class="wrap playout">
+    <aside class="toc"><p>On this page</p><ol>
+      <li><a href="#ab-summary" data-anchor>Summary</a></li><li><a href="#ab-question" data-anchor>The question</a></li><li><a href="#ab-data" data-anchor>The data</a></li>
+      <li><a href="#ab-method" data-anchor>Method</a></li><li><a href="#ab-results" data-anchor>Results</a></li><li><a href="#ab-next" data-anchor>Next steps</a></li>
+    </ol></aside>
+    <article>
+      <section class="psec" id="ab-summary">
+        <h2>Summary</h2>
+        <div class="verdict" style="margin-bottom:32px">
+          <div class="verdict-mark" aria-hidden="true">✓</div>
+          <div>
+            <h3>Recommendation: keep the current page</h3>
+            <p>The new page converted at 11.88% against 12.04% for the old one. A gap this small appears by chance most of the time, and the 95% confidence interval for the difference (−0.39 to +0.08 percentage points) rules out any meaningful lift. Launching would cost design and engineering time with no measurable return.</p>
+          </div>
+        </div>
+        <div class="kpis" style="margin-bottom:0">
+          <div class="kpi"><b>290,584</b><span>unique users after cleaning</span></div>
+          <div class="kpi"><b>12.04%</b><span>conversion, old page</span></div>
+          <div class="kpi"><b>11.88%</b><span>conversion, new page</span></div>
+          <div class="kpi"><b>p = 0.905</b><span>one-sided test for a lift</span></div>
+        </div>
+      </section>
+      <section class="psec" id="ab-question">
+        <h2>The question</h2>
+        <p>Does showing users the new landing page increase the share who convert? I framed it as a one-sided test, because the business only cares about launching if the new page is better.</p>
+        <p>H₀: p<sub>new</sub> − p<sub>old</sub> ≤ 0 &nbsp;&nbsp; H₁: p<sub>new</sub> − p<sub>old</sub> &gt; 0 &nbsp;&nbsp; α = 0.05</p>
+      </section>
+      <section class="psec" id="ab-data">
+        <h2>The data</h2>
+        <p>Each row is a user visit with a timestamp, the group they were assigned to, the page they saw and whether they converted. The experiment ran from 2 to 24 January 2017.</p>
+        <ul>
+          <li>Removed rows where the assigned group and the page shown didn’t match, since those users’ results can’t be trusted.</li>
+          <li>Dropped duplicate users so each person counts once.</li>
+          <li>Ended with 145,274 users in control and 145,310 in treatment, a near-even split that suggests randomisation worked.</li>
+        </ul>
+      </section>
+      <section class="psec" id="ab-method">
+        <h2>Method</h2>
+        <p>I tested the result three independent ways so the conclusion wouldn’t hinge on one technique.</p>
+        <ol class="numbered">
+          <li><div><b>Simulation</b>Simulated 10,000 experiments where both pages share the pooled conversion rate (11.96%) and compared the observed gap with that distribution.</div></li>
+          <li><div><b>Two-proportion z-test</b>z = −1.31, one-sided p = 0.905.</div></li>
+          <li><div><b>Logistic regression</b>Page as the predictor, giving an effect size as an odds ratio.</div></li>
+        </ol>
+        <figure class="figure" style="margin:24px 0 0">
+          <div class="figure-title">Simulated differences under “no real difference”</div>
+          <div class="figure-sub">About 90% of the no-difference runs produced a gap at least as favourable to the new page as the real one.</div>
+          <div class="chart" id="histChartAB" role="img" aria-label="Histogram of simulated differences with the observed difference inside the bulk of the distribution."></div>
+          <div class="legend">
+            <span><i class="sw" style="background:var(--accent)"></i>At least as good as observed (<b class="shareLbl">90.5%</b>)</span>
+            <span><i class="sw" style="background:var(--control)"></i>Worse than observed</span>
+          </div>
+        </figure>
+      </section>
+      <section class="psec" id="ab-results">
+        <h2>Results</h2>
+        <div class="charts2">
+          <figure class="figure" style="margin:0">
+            <div class="figure-title">Conversion rate by page</div>
+            <div class="figure-sub">Dots are observed rates; lines are 95% confidence intervals.</div>
+            <div class="chart" id="dotChart" role="img" aria-label="Old page 12.04 percent, new page 11.88 percent, with overlapping confidence intervals."></div>
+          </figure>
+          <figure class="figure" style="margin:0">
+            <div class="figure-title">Daily conversion rate, both groups</div>
+            <div class="figure-sub">Stable around the 11.96% average, with no trend.</div>
+            <div class="chart" id="lineChart" role="img" aria-label="Daily conversion rate between 11.4 and 12.5 percent with no trend."></div>
+          </figure>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Group</th><th class="num">Users</th><th class="num">Conversions</th><th class="num">Conversion rate</th></tr></thead>
+            <tbody>
+              <tr><td>Old page (control)</td><td class="num">145,274</td><td class="num">17,489</td><td class="num">12.039%</td></tr>
+              <tr><td>New page (treatment)</td><td class="num">145,310</td><td class="num">17,264</td><td class="num">11.881%</td></tr>
+              <tr><td><strong>Difference (new − old)</strong></td><td class="num"></td><td class="num"></td><td class="num"><strong>−0.158 pts</strong></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Logistic regression term</th><th class="num">Coefficient</th><th class="num">Odds ratio</th><th class="num">p-value (two-sided)</th></tr></thead>
+            <tbody>
+              <tr><td>Intercept</td><td class="num">−1.9888</td><td class="num">–</td><td class="num">&lt;0.001</td></tr>
+              <tr><td>New page</td><td class="num">−0.0150</td><td class="num">0.985</td><td class="num">0.190</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>All three methods agree. The regression’s two-sided p-value of 0.19 matches the z-test’s two-sided equivalent, and an odds ratio of 0.985 means users on the new page were about 1.5% <em>less</em> likely to convert, though that dip is also within noise.</p>
+      </section>
+      <section class="psec" id="ab-next">
+        <h2>Next steps</h2>
+        <ul>
+          <li><strong>Size the next test up front.</strong> With about 145,000 users per group, this design could reliably detect a change of roughly 0.34 points (80% power). Smaller effects need more traffic or a longer run.</li>
+          <li><strong>Run longer.</strong> Three weeks may not separate a real effect from change aversion or novelty among returning visitors.</li>
+          <li><strong>Segment.</strong> Break results down by country and device to check whether the new page helps one audience while hurting another.</li>
+        </ul>
+        <p class="note">The takeaway for the business: the redesign isn’t worth launching as it stands. Spend the effort on a version with a bigger expected impact, and plan the test size before it starts.</p>
+      </section>
+    </article>
+  </div>
+  <nav class="wrap pnext" aria-label="More projects">
+    <a href="#/projects/investigate-dataset"><small>Previous project</small><b>Investigate a Dataset</b></a>
+    <a href="#/projects/music-store"><small>Next project</small><b>Music Store Analysis</b></a>
   </nav>
+</main>
 
-  <!-- Hero Section -->
-  <header class="bg-blue-700 text-white text-center py-32 mt-16 shadow-lg">
-    <h2 class="text-5xl font-bold mb-4">Hi, I'm Amr Ehab</h2>
-    <p class="text-xl max-w-2xl mx-auto leading-relaxed">
-      A Data Analyst passionate about transforming data into actionable insights.
-      Skilled in Python, SQL, Excel, and Tableau — I help organizations make smarter, data-driven decisions.
-    </p>
-  </header>
-
-  <!-- About Section -->
-  <section id="about" class="py-20 bg-white">
-    <div class="max-w-5xl mx-auto text-center px-6">
-      <h2 class="text-3xl font-bold mb-6">About Me</h2>
-      <p class="text-gray-700 leading-relaxed text-lg">
-        I'm a data professional who thrives on solving complex problems through analytical thinking.
-        I specialize in data cleaning, analysis, and visualization — helping stakeholders uncover trends
-        and make informed business decisions. My work combines technical skill with storytelling, ensuring
-        insights are both accurate and understandable.
-      </p>
-    </div>
-  </section>
-
-  <!-- Projects Section -->
-  <section id="projects" class="py-20 bg-gray-50">
-    <div class="max-w-6xl mx-auto px-6">
-      <h2 class="text-3xl font-bold text-center mb-12">Featured Projects</h2>
-
-      <div class="grid md:grid-cols-2 gap-8">
-
-        <!-- Project 1 -->
-        <div class="bg-white rounded-2xl shadow hover:shadow-2xl transition p-6">
-          <h3 class="text-2xl font-semibold mb-2 text-blue-700">A/B Test Analysis</h3>
-          <p class="text-gray-700 mb-4">
-            Conducted an A/B test to assess the impact of a new web page on user conversion rates.
-            Applied <strong>Python</strong>, <strong>Pandas</strong>, and <strong>Statsmodels</strong> for statistical testing,
-            logistic regression, and significance analysis. Results confirmed a notable increase in conversions,
-            justifying full deployment.
-          </p>
-          <a href="https://amrehab2.github.io/AB-test-analysis/" target="_blank"
-             class="inline-block mt-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">View Project</a>
+<!-- ================= PROJECT: MUSIC STORE ================= -->
+<main data-view="music" hidden>
+  <div class="ptabs-bar"><nav class="wrap ptabs" aria-label="Projects">
+    <a href="#/projects/ab-test">A/B Test Analysis</a><a href="#/projects/music-store" aria-current="page">Music Store Analysis</a><a href="#/projects/us-flights">US Flights Dashboard</a><a href="#/projects/investigate-dataset">Investigate a Dataset</a>
+  </nav></div>
+  <header class="phead"><div class="wrap">
+    <ol class="crumbs"><li><a href="#top">Home</a></li><li><a href="#projects">Projects</a></li><li>Music Store Analysis</li></ol>
+    <h1>Digital Music Store Analysis</h1>
+    <p class="q">Which artists, genres and customers drive the store’s revenue, and where should marketing focus?</p>
+    <dl class="pmeta">
+      <div><dt>Type</dt><dd>Sales analysis</dd></div>
+      <div><dt>Tools</dt><dd>SQL, Excel</dd></div>
+      <div><dt>Data</dt><dd>Relational sales database</dd></div>
+      <div><dt>Delivered</dt><dd>Ranked revenue tables, KPI charts</dd></div>
+    </dl>
+    <div class="actions"><a class="btn primary" href="https://drive.google.com/drive/folders/1WVteNh1wgLNubfEW-OoUaEQ4EDvrFgNO" target="_blank" rel="noopener">View project files</a></div>
+  </div></header>
+  <div class="wrap playout">
+    <aside class="toc"><p>On this page</p><ol>
+      <li><a href="#mu-overview" data-anchor>Overview</a></li><li><a href="#mu-data" data-anchor>The data</a></li><li><a href="#mu-approach" data-anchor>Approach</a></li>
+      <li><a href="#mu-query" data-anchor>Query example</a></li><li><a href="#mu-delivered" data-anchor>What I delivered</a></li>
+    </ol></aside>
+    <article>
+      <section class="psec" id="mu-overview">
+        <h2>Overview</h2>
+        <p>An online music store wanted to understand where its sales come from so it could put marketing money behind the catalogue and customers that matter most. I translated that into three questions:</p>
+        <ul>
+          <li>Which genres and artists bring in the most revenue?</li>
+          <li>Which customers and countries spend the most?</li>
+          <li>Which KPIs should the team track to see if marketing is working?</li>
+        </ul>
+      </section>
+      <section class="psec" id="mu-data">
+        <h2>The data</h2>
+        <p>A relational database covering the store’s catalogue and sales. Revenue lives at the invoice-line level, so every question means joining sales back to the catalogue or to customers.</p>
+        <div class="pvis" style="margin-top:20px">
+          <div class="pvis-title">Database schema</div>
+          <div class="pvis-sub">Highlighted tables are the path from a sale to its genre.</div>
+          <svg viewBox="0 0 510 200" role="img" aria-label="Schema: Artist to Album to Track, Genre to Track, Track to InvoiceLine, InvoiceLine to Invoice, Invoice to Customer.">
+            <path class="d-line" d="M110 48H140"/><path class="d-line" d="M240 48H270"/>
+            <path class="d-line hl" d="M400 48H370"/><path class="d-line hl" d="M320 66V150"/>
+            <path class="d-line" d="M270 168H240"/><path class="d-line" d="M140 168H110"/>
+            <rect class="d-box" x="10" y="30" width="100" height="36" rx="8"/><text class="d-t" x="60" y="53" text-anchor="middle">Artist</text>
+            <rect class="d-box" x="140" y="30" width="100" height="36" rx="8"/><text class="d-t" x="190" y="53" text-anchor="middle">Album</text>
+            <rect class="d-box hl" x="270" y="30" width="100" height="36" rx="8"/><text class="d-t" x="320" y="53" text-anchor="middle">Track</text>
+            <rect class="d-box hl" x="400" y="30" width="100" height="36" rx="8"/><text class="d-t" x="450" y="53" text-anchor="middle">Genre</text>
+            <rect class="d-box" x="10" y="150" width="100" height="36" rx="8"/><text class="d-t" x="60" y="173" text-anchor="middle">Customer</text>
+            <rect class="d-box" x="140" y="150" width="100" height="36" rx="8"/><text class="d-t" x="190" y="173" text-anchor="middle">Invoice</text>
+            <rect class="d-box hl" x="270" y="150" width="100" height="36" rx="8"/><text class="d-t" x="320" y="173" text-anchor="middle">InvoiceLine</text>
+            <text class="d-s" x="330" y="112">price × quantity</text>
+          </svg>
         </div>
+      </section>
+      <section class="psec" id="mu-approach">
+        <h2>Approach</h2>
+        <ol class="numbered">
+          <li><div><b>Map the schema</b>Traced how each table links so every revenue figure could be tied to the right artist, genre or customer.</div></li>
+          <li><div><b>Calculate revenue</b>Defined revenue as unit price × quantity at the invoice-line level, then aggregated it up to each question’s level.</div></li>
+          <li><div><b>Rank and compare</b>Ranked artists, genres, customers and countries by revenue to show where sales concentrate.</div></li>
+          <li><div><b>Track KPIs in Excel</b>Moved the query results into Excel to chart them and set up KPIs the team can monitor.</div></li>
+        </ol>
+      </section>
+      <section class="psec" id="mu-query">
+        <h2>Query example</h2>
+        <p>Revenue by genre, following the highlighted path in the schema. The same pattern, with different joins, answers the artist and customer questions.</p>
+<pre class="code"><span class="k">SELECT</span> g.Name <span class="k">AS</span> genre,
+       <span class="k">ROUND</span>(<span class="k">SUM</span>(il.UnitPrice * il.Quantity), 2) <span class="k">AS</span> revenue
+<span class="k">FROM</span> InvoiceLine il
+<span class="k">JOIN</span> Track t <span class="k">ON</span> t.TrackId = il.TrackId
+<span class="k">JOIN</span> Genre g <span class="k">ON</span> g.GenreId = t.GenreId
+<span class="k">GROUP BY</span> g.Name
+<span class="k">ORDER BY</span> revenue <span class="k">DESC</span>
+<span class="k">LIMIT</span> 5;  <span class="c">-- top 5 genres</span></pre>
+      </section>
+      <section class="psec" id="mu-delivered">
+        <h2>What I delivered</h2>
+        <ul>
+          <li>Ranked tables of the top-earning genres, artists, customers and countries.</li>
+          <li>Excel charts that make the concentration of revenue easy to see at a glance.</li>
+          <li>A short KPI set for tracking whether marketing changes move sales.</li>
+        </ul>
+        <ul class="chips" style="margin-top:20px"><li>SQL</li><li>Joins and aggregation</li><li>Excel</li><li>KPI tracking</li></ul>
+      </section>
+    </article>
+  </div>
+  <nav class="wrap pnext" aria-label="More projects">
+    <a href="#/projects/ab-test"><small>Previous project</small><b>A/B Test Analysis</b></a>
+    <a href="#/projects/us-flights"><small>Next project</small><b>US Flights Dashboard</b></a>
+  </nav>
+</main>
 
-        <!-- Project 2 -->
-        <div class="bg-white rounded-2xl shadow hover:shadow-2xl transition p-6">
-          <h3 class="text-2xl font-semibold mb-2 text-blue-700">Digital Music Store Analysis</h3>
-          <p class="text-gray-700 mb-4">
-            Analyzed a digital music store database using <strong>SQL</strong> and <strong>Excel</strong> to uncover
-            customer behavior and product performance. Identified top-selling artists and genres through aggregation,
-            visualization, and KPI tracking to enhance marketing decisions.
-          </p>
-          <a href="https://drive.google.com/drive/folders/1WVteNh1wgLNubfEW-OoUaEQ4EDvrFgNO" target="_blank"
-             class="inline-block mt-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">View Project</a>
+<!-- ================= PROJECT: FLIGHTS ================= -->
+<main data-view="flights" hidden>
+  <div class="ptabs-bar"><nav class="wrap ptabs" aria-label="Projects">
+    <a href="#/projects/ab-test">A/B Test Analysis</a><a href="#/projects/music-store">Music Store Analysis</a><a href="#/projects/us-flights" aria-current="page">US Flights Dashboard</a><a href="#/projects/investigate-dataset">Investigate a Dataset</a>
+  </nav></div>
+  <header class="phead"><div class="wrap">
+    <ol class="crumbs"><li><a href="#top">Home</a></li><li><a href="#projects">Projects</a></li><li>US Flights Dashboard</li></ol>
+    <h1>US Flights Dashboard</h1>
+    <p class="q">Where and when do US flights get delayed or cancelled, and why? One interactive view anyone can explore.</p>
+    <dl class="pmeta">
+      <div><dt>Type</dt><dd>Interactive dashboard</dd></div>
+      <div><dt>Tools</dt><dd>Tableau</dd></div>
+      <div><dt>Data</dt><dd>~5.8M US flights, 2015</dd></div>
+      <div><dt>Delivered</dt><dd>Filterable Tableau dashboard</dd></div>
+    </dl>
+    <div class="actions"><a class="btn primary" href="https://drive.google.com/file/d/1CCg5-Yn2rCOgc9EPMSr2sZYyqwLx5rrl/view" target="_blank" rel="noopener">View dashboard</a></div>
+  </div></header>
+  <div class="wrap playout">
+    <aside class="toc"><p>On this page</p><ol>
+      <li><a href="#fl-overview" data-anchor>Overview</a></li><li><a href="#fl-data" data-anchor>The data</a></li><li><a href="#fl-metrics" data-anchor>Metrics</a></li>
+      <li><a href="#fl-design" data-anchor>Dashboard design</a></li><li><a href="#fl-delivered" data-anchor>What I delivered</a></li>
+    </ol></aside>
+    <article>
+      <section class="psec" id="fl-overview">
+        <h2>Overview</h2>
+        <p>Travellers, airlines and airports all lose time and money to delays. The aim was a single dashboard where anyone could see how the US domestic network performed in 2015 and dig into specific airlines, airports or months without writing a query.</p>
+      </section>
+      <section class="psec" id="fl-data">
+        <h2>The data</h2>
+        <p>The 2015 US Department of Transportation flights dataset: roughly 5.8 million domestic flights with scheduled and actual times, cancellations, and minutes of delay recorded by cause. Supporting tables map airline and airport codes to names and locations.</p>
+      </section>
+      <section class="psec" id="fl-metrics">
+        <h2>Metrics</h2>
+        <p>Defining metrics before building charts keeps every view consistent.</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Metric</th><th>Definition</th></tr></thead>
+            <tbody>
+              <tr><td>Flights</td><td>Number of scheduled flights in the current filter</td></tr>
+              <tr><td>% delayed</td><td>Flights arriving 15 or more minutes late, divided by flights operated</td></tr>
+              <tr><td>% cancelled</td><td>Cancelled flights divided by scheduled flights</td></tr>
+              <tr><td>Average delay</td><td>Mean arrival delay in minutes for delayed flights</td></tr>
+              <tr><td>Delay by cause</td><td>Total delay minutes split into airline, late aircraft, air system, weather and security</td></tr>
+            </tbody>
+          </table>
         </div>
-
-        <!-- Project 3 -->
-        <div class="bg-white rounded-2xl shadow hover:shadow-2xl transition p-6">
-          <h3 class="text-2xl font-semibold mb-2 text-blue-700">US Flights Dashboard</h3>
-          <p class="text-gray-700 mb-4">
-            Built an interactive dashboard in <strong>Tableau</strong> analyzing flight delays, cancellations, and
-            performance metrics using the <strong>2015 US Flights dataset</strong>. Delivered insights on busiest airports,
-            seasonal patterns, and top delay causes via dynamic visuals.
-          </p>
-          <a href="https://drive.google.com/file/d/1CCg5-Yn2rCOgc9EPMSr2sZYyqwLx5rrl/view" target="_blank"
-             class="inline-block mt-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">View Project</a>
+      </section>
+      <section class="psec" id="fl-design">
+        <h2>Dashboard design</h2>
+        <p>KPIs sit at the top for the headline answer, with detail views below. Filters apply across every panel, so selecting an airline updates the whole dashboard.</p>
+        <div class="pvis" style="margin-top:20px">
+          <div class="pvis-title">Dashboard layout</div>
+          <div class="pvis-sub">Schematic of the layout; bar lengths are placeholders, not results.</div>
+          <svg viewBox="0 0 480 330" role="img" aria-label="Dashboard wireframe with filters, four KPI tiles, a busiest airports panel, a monthly delay trend and a delay causes chart.">
+            <rect class="d-panel" x="0" y="0" width="480" height="40" rx="8"/>
+            <text class="d-t" x="14" y="25">Filters</text>
+            <rect class="d-box" x="80" y="10" width="90" height="20" rx="10"/><text class="d-s" x="125" y="24" text-anchor="middle">Airline</text>
+            <rect class="d-box" x="180" y="10" width="90" height="20" rx="10"/><text class="d-s" x="225" y="24" text-anchor="middle">Month</text>
+            <rect class="d-box" x="280" y="10" width="90" height="20" rx="10"/><text class="d-s" x="325" y="24" text-anchor="middle">Airport</text>
+            <rect class="d-panel" x="0" y="52" width="111" height="54" rx="8"/><text class="d-s" x="12" y="72">Flights</text><rect class="d-ink" x="12" y="82" width="60" height="10" rx="3"/>
+            <rect class="d-panel" x="123" y="52" width="111" height="54" rx="8"/><text class="d-s" x="135" y="72">% delayed</text><rect class="d-ink" x="135" y="82" width="44" height="10" rx="3"/>
+            <rect class="d-panel" x="246" y="52" width="111" height="54" rx="8"/><text class="d-s" x="258" y="72">% cancelled</text><rect class="d-ink" x="258" y="82" width="30" height="10" rx="3"/>
+            <rect class="d-panel" x="369" y="52" width="111" height="54" rx="8"/><text class="d-s" x="381" y="72">Avg delay</text><rect class="d-ink" x="381" y="82" width="50" height="10" rx="3"/>
+            <rect class="d-panel" x="0" y="118" width="234" height="210" rx="8"/>
+            <text class="d-t" x="14" y="140">Busiest airports</text>
+            <rect class="d-ink" x="14" y="156" width="190" height="14" rx="3"/><rect class="d-ink" x="14" y="178" width="162" height="14" rx="3"/>
+            <rect class="d-ink" x="14" y="200" width="140" height="14" rx="3"/><rect class="d-ink" x="14" y="222" width="118" height="14" rx="3"/>
+            <rect class="d-ink" x="14" y="244" width="100" height="14" rx="3"/><rect class="d-ink" x="14" y="266" width="88" height="14" rx="3"/>
+            <rect class="d-soft" x="14" y="288" width="72" height="14" rx="3"/>
+            <rect class="d-panel" x="246" y="118" width="234" height="100" rx="8"/>
+            <text class="d-t" x="260" y="140">Monthly delay pattern</text>
+            <path class="d-stroke" d="M262 196 L290 184 L318 190 L346 170 L374 160 L402 174 L430 186 L458 178"/>
+            <rect class="d-panel" x="246" y="228" width="234" height="100" rx="8"/>
+            <text class="d-t" x="260" y="250">Delay causes</text>
+            <text class="d-s" x="260" y="270">Airline</text><text class="d-s" x="260" y="288">Late aircraft</text><text class="d-s" x="260" y="306">Air system</text><text class="d-s" x="260" y="322">Weather, security</text>
+            <rect class="d-ink" x="366" y="261" width="96" height="11" rx="3"/><rect class="d-ink" x="366" y="279" width="84" height="11" rx="3"/>
+            <rect class="d-ink" x="366" y="297" width="64" height="11" rx="3"/><rect class="d-soft" x="366" y="313" width="22" height="11" rx="3"/>
+          </svg>
         </div>
+      </section>
+      <section class="psec" id="fl-delivered">
+        <h2>What I delivered</h2>
+        <ul>
+          <li>An interactive Tableau dashboard showing the busiest airports, seasonal delay patterns and the leading causes of delay.</li>
+          <li>Cross-filtering by airline, month and airport so users can answer their own follow-up questions.</li>
+          <li>Consistent metric definitions, so every panel tells the same story.</li>
+        </ul>
+        <ul class="chips" style="margin-top:20px"><li>Tableau</li><li>Dashboard design</li><li>Calculated fields</li><li>Time series</li></ul>
+      </section>
+    </article>
+  </div>
+  <nav class="wrap pnext" aria-label="More projects">
+    <a href="#/projects/music-store"><small>Previous project</small><b>Music Store Analysis</b></a>
+    <a href="#/projects/investigate-dataset"><small>Next project</small><b>Investigate a Dataset</b></a>
+  </nav>
+</main>
 
-        <!-- Project 4 -->
-        <div class="bg-white rounded-2xl shadow hover:shadow-2xl transition p-6">
-          <h3 class="text-2xl font-semibold mb-2 text-blue-700">Investigate a Dataset</h3>
-          <p class="text-gray-700 mb-4">
-            Conducted exploratory data analysis using <strong>Python</strong> with <strong>Pandas</strong>,
-            <strong>Matplotlib</strong>, and <strong>Seaborn</strong>. Cleaned and visualized data to answer
-            targeted questions and uncover trends. Presented results using clear visuals and statistical insights.
-          </p>
-          <a href="https://drive.google.com/file/d/16InVaHQUzLA20ikfldCJOH6AaVVZ7Djt/view" target="_blank"
-             class="inline-block mt-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">View Project</a>
+<!-- ================= PROJECT: EDA ================= -->
+<main data-view="eda" hidden>
+  <div class="ptabs-bar"><nav class="wrap ptabs" aria-label="Projects">
+    <a href="#/projects/ab-test">A/B Test Analysis</a><a href="#/projects/music-store">Music Store Analysis</a><a href="#/projects/us-flights">US Flights Dashboard</a><a href="#/projects/investigate-dataset" aria-current="page">Investigate a Dataset</a>
+  </nav></div>
+  <header class="phead"><div class="wrap">
+    <ol class="crumbs"><li><a href="#top">Home</a></li><li><a href="#projects">Projects</a></li><li>Investigate a Dataset</li></ol>
+    <h1>Investigate a Dataset</h1>
+    <p class="q">Which patterns in the data hold up once it’s properly cleaned? A full exploratory analysis, from raw file to findings.</p>
+    <dl class="pmeta">
+      <div><dt>Type</dt><dd>Exploratory analysis</dd></div>
+      <div><dt>Tools</dt><dd>Python, Pandas, Matplotlib, Seaborn</dd></div>
+      <div><dt>Method</dt><dd>Assess, clean, explore, conclude</dd></div>
+      <div><dt>Delivered</dt><dd>Written report with visuals</dd></div>
+    </dl>
+    <div class="actions"><a class="btn primary" href="https://drive.google.com/file/d/16InVaHQUzLA20ikfldCJOH6AaVVZ7Djt/view" target="_blank" rel="noopener">Read the analysis</a></div>
+  </div></header>
+  <div class="wrap playout">
+    <aside class="toc"><p>On this page</p><ol>
+      <li><a href="#ed-overview" data-anchor>Overview</a></li><li><a href="#ed-workflow" data-anchor>Workflow</a></li><li><a href="#ed-quality" data-anchor>Data quality checks</a></li><li><a href="#ed-delivered" data-anchor>What I delivered</a></li>
+    </ol></aside>
+    <article>
+      <section class="psec" id="ed-overview">
+        <h2>Overview</h2>
+        <p>Exploratory analysis is the work that comes before any model or dashboard: understanding what the data contains, fixing what’s broken, and finding which patterns are real. This project covers that process end to end and answers a set of targeted questions with statistics and charts.</p>
+      </section>
+      <section class="psec" id="ed-workflow">
+        <h2>Workflow</h2>
+        <ol class="numbered">
+          <li><div><b>Load</b>Read the raw data into Pandas and get a first look at its shape and columns.</div></li>
+          <li><div><b>Assess</b>Check data types, missing values, duplicates and impossible values.</div></li>
+          <li><div><b>Clean</b>Fix types, handle gaps, drop duplicates and columns that don’t serve the questions.</div></li>
+          <li><div><b>Explore</b>Answer one question at a time, from single-variable distributions to relationships between variables.</div></li>
+          <li><div><b>Conclude</b>State findings with the evidence behind them and the limits of an observational dataset.</div></li>
+        </ol>
+      </section>
+      <section class="psec" id="ed-quality">
+        <h2>Data quality checks</h2>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Check</th><th>Why it matters</th></tr></thead>
+            <tbody>
+              <tr><td>Missing values</td><td>Gaps can silently shrink or bias the sample behind a chart.</td></tr>
+              <tr><td>Duplicates</td><td>Repeated rows inflate counts and averages.</td></tr>
+              <tr><td>Data types</td><td>Dates stored as text or numbers stored as strings break calculations.</td></tr>
+              <tr><td>Impossible values</td><td>Zeros or negatives where they can’t occur point to entry errors.</td></tr>
+            </tbody>
+          </table>
         </div>
+      </section>
+      <section class="psec" id="ed-delivered">
+        <h2>What I delivered</h2>
+        <ul>
+          <li>A cleaned, analysis-ready dataset with every cleaning step documented.</li>
+          <li>A written report answering each question with a clear chart and summary statistics.</li>
+          <li>An honest limitations section: correlation in observational data isn’t causation.</li>
+        </ul>
+        <ul class="chips" style="margin-top:20px"><li>Python</li><li>Pandas</li><li>Matplotlib</li><li>Seaborn</li><li>Descriptive statistics</li></ul>
+      </section>
+    </article>
+  </div>
+  <nav class="wrap pnext" aria-label="More projects">
+    <a href="#/projects/us-flights"><small>Previous project</small><b>US Flights Dashboard</b></a>
+    <a href="#/projects/ab-test"><small>Next project</small><b>A/B Test Analysis</b></a>
+  </nav>
+</main>
 
-      </div>
-    </div>
-  </section>
+<footer>
+  <div class="wrap foot">
+    <div><b>Amr Ehab</b><span>Data analyst working in Python, SQL, Excel and Tableau.</span></div>
+    <nav aria-label="Footer">
+      <a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#approach">Approach</a><a href="mailto:amre2809@gmail.com">Email</a>
+    </nav>
+  </div>
+  <div class="wrap foot-base"><span>© 2026 Amr Ehab</span><a href="#top" style="color:#C9D2DD">Back to top</a></div>
+</footer>
 
-  <!-- Contact Section -->
-  <section id="contact" class="py-20 bg-white text-center">
-    <h2 class="text-3xl font-bold mb-4">Let's Connect</h2>
-    <p class="text-gray-700 text-lg mb-6">
-      Have a project idea or want to learn more about my work? Feel free to reach out.
-    </p>
-    <a href="mailto:amre2809@gmail.com"
-       class="inline-block px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition">
-       📧 amre2809@gmail.com
-    </a>
-  </section>
+<script>
+const D = {
+  nOld:145274, nNew:145310, pOld:0.1203863045004612, pNew:0.11880806551510564,
+  diff:-0.0015782389853555567, pPool:0.11959708724499628,
+  dates:["2017-01-02","2017-01-03","2017-01-04","2017-01-05","2017-01-06","2017-01-07","2017-01-08","2017-01-09","2017-01-10","2017-01-11","2017-01-12","2017-01-13","2017-01-14","2017-01-15","2017-01-16","2017-01-17","2017-01-18","2017-01-19","2017-01-20","2017-01-21","2017-01-22","2017-01-23","2017-01-24"],
+  daily:[0.1227,0.1138,0.1193,0.1191,0.1194,0.1186,0.1198,0.1189,0.1196,0.117,0.1222,0.1141,0.123,0.117,0.1205,0.125,0.1248,0.1186,0.1165,0.1209,0.1186,0.1234,0.1198]
+};
 
-  <!-- Footer -->
-  <footer class="bg-gray-800 text-gray-300 text-center py-6">
-    <p>© 2025 Amr Ehab — Data Analytics Portfolio</p>
-  </footer>
+/* Seeded simulation of the no-difference world (normal approximation to the binomial) */
+function rng(a){return function(){a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296;}}
+const SIMS = (() => {
+  const r = rng(42), sd = Math.sqrt(D.pPool*(1-D.pPool)*(1/D.nNew+1/D.nOld)), out = [];
+  for (let i=0;i<10000;i++){ const u=1-r(), v=r(); out.push(sd*Math.sqrt(-2*Math.log(u))*Math.cos(2*Math.PI*v)); }
+  return out;
+})();
+const share = SIMS.filter(x => x >= D.diff).length / SIMS.length;
 
+
+const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const minus = s => String(s).replace('-', '−');
+
+function histogram(el){
+  const W = el.clientWidth || 520, H = Math.round(Math.max(220, Math.min(320, W*0.6)));
+  const m = {t:30, r:10, b:46, l:10}, iw = W-m.l-m.r, ih = H-m.t-m.b;
+  const lo=-0.0048, hi=0.0048, n=48, bw=(hi-lo)/n, counts=new Array(n).fill(0);
+  SIMS.forEach(v => { const i=Math.floor((v-lo)/bw); if(i>=0&&i<n) counts[i]++; });
+  const max = Math.max(...counts), X = v => m.l + (v-lo)/(hi-lo)*iw, px = iw/n;
+  const acc=css('--accent'), ctl=css('--control'), ink=css('--ink'), mut=css('--muted'), rule=css('--rule');
+  let s = `<svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}">`;
+  counts.forEach((c,i) => {
+    const h = c/max*ih, x0 = lo+i*bw, center = x0+bw/2;
+    s += `<rect x="${(m.l+i*px+0.75).toFixed(1)}" y="${(m.t+ih-h).toFixed(1)}" width="${Math.max(px-1.5,1).toFixed(1)}" height="${h.toFixed(1)}" rx="1.5" fill="${center>=D.diff?acc:ctl}" opacity="${center>=D.diff?0.9:0.55}"><title>${c} simulations</title></rect>`;
+  });
+  s += `<line x1="${m.l}" x2="${W-m.r}" y1="${m.t+ih}" y2="${m.t+ih}" stroke="${rule}"/>`;
+  [-0.004,-0.002,0,0.002,0.004].forEach(t => {
+    const x = X(t), lab = t===0 ? '0' : (t>0?'+':'−') + Math.abs(t*100).toFixed(1);
+    s += `<line x1="${x}" x2="${x}" y1="${m.t+ih}" y2="${m.t+ih+5}" stroke="${mut}"/><text x="${x}" y="${m.t+ih+20}" text-anchor="middle" font-size="12" fill="${mut}">${lab}</text>`;
+  });
+  s += `<text x="${m.l+iw/2}" y="${H-6}" text-anchor="middle" font-size="12" fill="${mut}">Difference in conversion, new − old (percentage points)</text>`;
+  const ox = X(D.diff);
+  s += `<line x1="${ox}" x2="${ox}" y1="${m.t-6}" y2="${m.t+ih}" stroke="${ink}" stroke-width="2.5"/>`;
+  s += `<text x="${ox-8}" y="${m.t+6}" text-anchor="end" font-size="13" font-weight="700" fill="${ink}">Observed</text>`;
+  s += `<text x="${ox-8}" y="${m.t+22}" text-anchor="end" font-size="12.5" fill="${mut}">${minus((D.diff*100).toFixed(2))} pts</text>`;
+  el.innerHTML = s + '</svg>';
+}
+
+function dotPlot(el){
+  const W = el.clientWidth || 460, H = 190, m = {t:16, r:70, b:36, l:12}, iw = W-m.l-m.r;
+  const lo=11.6, hi=12.3, X = v => m.l + (v-lo)/(hi-lo)*iw;
+  const mut=css('--muted'), ink=css('--ink'), grid=css('--grid');
+  const rows = [
+    {name:'Old page (control)', p:D.pOld, n:D.nOld, c:css('--control'), y:58},
+    {name:'New page (treatment)', p:D.pNew, n:D.nNew, c:css('--accent'), y:122}
+  ];
+  let s = `<svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}">`;
+  [11.6,11.8,12.0,12.2].forEach(t => {
+    const x = X(t);
+    s += `<line x1="${x}" x2="${x}" y1="${m.t}" y2="${H-m.b}" stroke="${grid}"/><text x="${x}" y="${H-m.b+18}" text-anchor="middle" font-size="12" fill="${mut}">${t.toFixed(1)}%</text>`;
+  });
+  rows.forEach(r => {
+    const pct = r.p*100, ci = 1.96*Math.sqrt(r.p*(1-r.p)/r.n)*100, a = X(pct-ci), b = X(pct+ci), x = X(pct);
+    s += `<text x="${m.l}" y="${r.y-16}" font-size="13" font-weight="600" fill="${ink}">${r.name}</text>`;
+    s += `<line x1="${a}" x2="${b}" y1="${r.y}" y2="${r.y}" stroke="${r.c}" stroke-width="3" stroke-linecap="round"/>`;
+    s += `<line x1="${a}" x2="${a}" y1="${r.y-7}" y2="${r.y+7}" stroke="${r.c}" stroke-width="2"/><line x1="${b}" x2="${b}" y1="${r.y-7}" y2="${r.y+7}" stroke="${r.c}" stroke-width="2"/>`;
+    s += `<circle cx="${x}" cy="${r.y}" r="7" fill="${r.c}" stroke="${css('--surface')}" stroke-width="2"><title>${pct.toFixed(2)}% (95% CI ${(pct-ci).toFixed(2)}–${(pct+ci).toFixed(2)}%)</title></circle>`;
+    s += `<text x="${b+10}" y="${r.y+4.5}" font-size="13" font-weight="700" fill="${ink}">${pct.toFixed(2)}%</text>`;
+  });
+  el.innerHTML = s + '</svg>';
+}
+
+function lineChart(el){
+  const W = el.clientWidth || 460, H = 190, m = {t:14, r:12, b:36, l:46}, iw = W-m.l-m.r, ih = H-m.t-m.b;
+  const n = D.dates.length, lo=11.2, hi=12.6, X = i => m.l + i*iw/(n-1), Y = v => m.t + (hi-v)/(hi-lo)*ih;
+  const acc=css('--accent'), mut=css('--muted'), grid=css('--grid'), ink=css('--ink');
+  const avg = (D.pPool*100);
+  let s = `<svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}">`;
+  [11.2,11.6,12.0,12.4].forEach(t => {
+    s += `<line x1="${m.l}" x2="${W-m.r}" y1="${Y(t)}" y2="${Y(t)}" stroke="${grid}"/><text x="${m.l-8}" y="${Y(t)+4}" text-anchor="end" font-size="12" fill="${mut}">${t.toFixed(1)}%</text>`;
+  });
+  s += `<line x1="${m.l}" x2="${W-m.r}" y1="${Y(avg)}" y2="${Y(avg)}" stroke="${ink}" stroke-dasharray="4 4" opacity=".6"/>`;
+  const pts = D.daily.map((v,i) => `${X(i).toFixed(1)},${Y(v*100).toFixed(1)}`).join(' ');
+  s += `<polyline points="${pts}" fill="none" stroke="${acc}" stroke-width="2.5" stroke-linejoin="round"/>`;
+  const months = ['Jan'];
+  D.daily.forEach((v,i) => {
+    const day = +D.dates[i].slice(8);
+    s += `<circle cx="${X(i)}" cy="${Y(v*100)}" r="3.2" fill="${acc}"><title>${months[0]} ${day}: ${(v*100).toFixed(2)}%</title></circle>`;
+  });
+  const step = W < 420 ? 7 : 4;
+  for (let i=0;i<n;i+=step){
+    s += `<text x="${X(i)}" y="${H-m.b+18}" text-anchor="middle" font-size="12" fill="${mut}">Jan ${+D.dates[i].slice(8)}</text>`;
+  }
+  el.innerHTML = s + '</svg>';
+}
+
+
+function renderAll(){
+  const vis = id => { const el = document.getElementById(id); return el && el.offsetParent !== null ? el : null; };
+  let el;
+  if ((el = vis('histChart'))) histogram(el);
+  if ((el = vis('histChartAB'))) histogram(el);
+  if ((el = vis('dotChart'))) dotPlot(el);
+  if ((el = vis('lineChart'))) lineChart(el);
+}
+document.querySelectorAll('.shareLbl').forEach(n => n.textContent = (share*100).toFixed(1) + '%');
+
+/* Router: #/projects/<slug> shows a project page; anything else shows home */
+const PAGES = {
+  'ab-test':['ab','A/B Test Analysis'],
+  'music-store':['music','Music Store Analysis'],
+  'us-flights':['flights','US Flights Dashboard'],
+  'investigate-dataset':['eda','Investigate a Dataset']
+};
+function route(){
+  const h = location.hash, m = h.match(/^#\/projects\/([\w-]+)/), page = m && PAGES[m[1]];
+  const view = page ? page[0] : 'home';
+  document.querySelectorAll('[data-view]').forEach(v => v.hidden = v.dataset.view !== view);
+  closeMenu();
+  if (page){
+    document.title = page[1] + ' | Amr Ehab';
+    window.scrollTo(0, 0);
+  } else {
+    document.title = 'Amr Ehab | Data Analyst';
+    const id = h.slice(1), target = id && document.getElementById(id);
+    if (target && id !== 'top') target.scrollIntoView(); else window.scrollTo(0, 0);
+  }
+  renderAll();
+}
+window.addEventListener('hashchange', route);
+
+/* In-page links on project pages scroll without changing the route */
+document.querySelectorAll('a[data-anchor]').forEach(a => a.addEventListener('click', e => {
+  e.preventDefault();
+  const t = document.getElementById(a.getAttribute('href').slice(1));
+  if (t) t.scrollIntoView({behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'});
+}));
+
+/* Project tabs on home */
+const tabs = [...document.querySelectorAll('.tab')];
+function selectTab(tab, focus){
+  tabs.forEach(t => {
+    const on = t === tab;
+    t.setAttribute('aria-selected', on);
+    t.tabIndex = on ? 0 : -1;
+    document.getElementById(t.getAttribute('aria-controls')).hidden = !on;
+  });
+  if (focus) tab.focus();
+}
+tabs.forEach((t, i) => {
+  t.addEventListener('click', () => selectTab(t));
+  t.addEventListener('keydown', e => {
+    let j = null;
+    if (e.key === 'ArrowRight') j = (i + 1) % tabs.length;
+    if (e.key === 'ArrowLeft') j = (i - 1 + tabs.length) % tabs.length;
+    if (e.key === 'Home') j = 0;
+    if (e.key === 'End') j = tabs.length - 1;
+    if (j !== null){ e.preventDefault(); selectTab(tabs[j], true); }
+  });
+});
+
+/* Skills matrix */
+const MATRIX = [
+  ['Python',[1,0,0,1]],['Pandas',[1,0,0,1]],['Statsmodels',[1,0,0,0]],['Matplotlib / Seaborn',[0,0,0,1]],
+  ['SQL',[0,1,0,0]],['Excel',[0,1,0,0]],['Tableau',[0,0,1,0]],['Data cleaning',[1,0,0,1]],
+  ['Hypothesis testing',[1,0,0,0]],['Regression',[1,0,0,0]],['KPI design',[0,1,1,0]],['Data visualisation',[1,1,1,1]]
+];
+const NAMES = ['A/B test analysis','Music store analysis','US flights dashboard','Investigate a dataset'];
+document.getElementById('matrixBody').innerHTML = MATRIX.map(([skill, row]) =>
+  '<tr><td>' + skill + '</td>' + row.map((v,i) =>
+    '<td>' + (v ? '<span class="dot" role="img" aria-label="Used in ' + NAMES[i] + '"></span>' : '<span class="dot off" aria-hidden="true"></span>') + '</td>'
+  ).join('') + '</tr>').join('');
+
+/* Theme toggle */
+const root = document.documentElement;
+try { const t = localStorage.getItem('theme'); if (t) root.setAttribute('data-theme', t); } catch(e){}
+document.getElementById('themeBtn').addEventListener('click', () => {
+  const cur = root.getAttribute('data-theme');
+  const dark = cur ? cur === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+  const next = dark ? 'light' : 'dark';
+  root.setAttribute('data-theme', next);
+  try { localStorage.setItem('theme', next); } catch(e){}
+  renderAll();
+});
+
+/* Mobile menu */
+const menuBtn = document.getElementById('menuBtn'), links = document.getElementById('navLinks');
+function closeMenu(){ links.classList.remove('open'); menuBtn.setAttribute('aria-expanded','false'); menuBtn.setAttribute('aria-label','Open menu'); }
+menuBtn.addEventListener('click', () => {
+  const open = links.classList.toggle('open');
+  menuBtn.setAttribute('aria-expanded', open);
+  menuBtn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+});
+
+let rt; window.addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(renderAll, 150); });
+matchMedia('(prefers-color-scheme: dark)').addEventListener('change', renderAll);
+if (document.fonts && document.fonts.ready) document.fonts.ready.then(renderAll);
+route();
+</script>
 </body>
 </html>
