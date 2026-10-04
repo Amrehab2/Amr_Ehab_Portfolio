@@ -398,6 +398,76 @@ footer{background:var(--navy);color:#97A3B3;border-top:1px solid rgba(255,255,25
 .foot nav a{color:#C9D2DD;text-decoration:none}
 .foot nav a:hover{color:#fff}
 footer .foot-base{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:.88rem}
+
+/* ================= Diagrams ================= */
+.diagram{overflow-x:auto;margin:0 -4px;padding:4px}
+.diagram svg{display:block;width:100%;height:auto;min-width:640px}
+.diagram text{font-family:inherit}
+.dlegend{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:14px;padding-top:14px;border-top:1px solid var(--rule);font-size:.88rem;color:var(--muted)}
+.dlegend span{display:inline-flex;align-items:center;gap:8px}
+.dlegend svg{flex:none}
+.k-badge{font-size:.72rem;font-weight:700;padding:1px 6px;border-radius:5px}
+.k-badge.pk{background:var(--accent-soft);color:var(--accent)}
+.k-badge.fk{background:var(--bg);color:var(--muted);border:1px solid var(--rule)}
+.k-used{width:22px;height:12px;border-radius:3px;background:var(--accent-soft);display:inline-block}
+/* ERD */
+.er-card{fill:var(--surface);stroke:var(--rule);stroke-width:1.2;filter:drop-shadow(0 2px 4px rgba(15,27,45,.06))}
+.er-head{fill:var(--bg);stroke:var(--rule);stroke-width:1.2}
+.er-head.hl{fill:var(--accent);stroke:var(--accent)}
+.er-title{fill:var(--ink);font-size:13.5px;font-weight:700}
+.er-title.hl{fill:#fff}
+.er-used{fill:var(--accent-soft);opacity:.7}
+.er-sep{stroke:var(--rule);stroke-width:1}
+.er-col{fill:var(--ink);font-size:12px}
+.er-col.pk{font-weight:600}
+.er-key{font-size:10px;font-weight:700;letter-spacing:.03em}
+.er-key.pk{fill:var(--accent)}
+.er-key.fk{fill:var(--muted)}
+.er-line{stroke:var(--control);stroke-width:1.4;fill:none}
+.er-line.hl{stroke:var(--accent);stroke-width:2.2}
+.er-note{fill:var(--accent);font-size:11px;font-style:italic}
+/* Dashboard */
+.dd-canvas{fill:var(--bg);stroke:var(--rule)}
+.dd-panel{fill:var(--surface);stroke:var(--rule)}
+.dd-title{fill:var(--ink);font-size:18px;font-weight:700}
+.dd-h{fill:var(--ink);font-size:12.5px;font-weight:600}
+.dd-s{fill:var(--muted);font-size:11px}
+.dd-s.ink{fill:var(--ink);font-weight:500}
+.dd-filter{fill:var(--surface);stroke:var(--rule)}
+.dd-chev{stroke:var(--muted);stroke-width:1.6;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.dd-sk{fill:var(--rule)}
+.dd-sk.strong{fill:var(--control);opacity:.55}
+.dd-spark{stroke:var(--accent);stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.dd-grat{stroke:var(--grid);stroke-width:1}
+.dd-bub{fill:var(--accent);fill-opacity:.28;stroke:var(--accent);stroke-width:1.2}
+.dd-code{fill:var(--muted);font-size:10px;font-weight:600}
+.dd-ring{fill:none;stroke:var(--ink);stroke-width:1.6;stroke-dasharray:3 3}
+.dd-callout-line{stroke:var(--ink);stroke-width:1.3;fill:none}
+.dd-callout{fill:var(--ink)}
+.dd-callout-t{fill:var(--surface);font-size:11.5px;font-weight:600}
+.dd-c1{fill:var(--accent)}
+.dd-c2{fill:var(--accent);opacity:.72}
+.dd-c3{fill:var(--accent);opacity:.48}
+.dd-c4{fill:var(--control);opacity:.75}
+.dd-c5{fill:var(--control);opacity:.4}
+.dd-area{fill:var(--accent);opacity:.12}
+.dd-trend{stroke:var(--accent);stroke-width:2.2;fill:none;stroke-linejoin:round}
+.dd-tick{fill:var(--muted);font-size:10px}
+/* Pipeline */
+.pl-box{fill:var(--surface);stroke:var(--rule);stroke-width:1.3}
+.pl-box.hl{stroke:var(--accent);stroke-width:1.8}
+.pl-num{fill:var(--accent)}
+.pl-numt{fill:#fff;font-size:11.5px;font-weight:700}
+.pl-name{fill:var(--ink);font-size:14px;font-weight:700}
+.pl-sub{fill:var(--muted);font-size:11px}
+.pl-arrow{stroke:var(--control);stroke-width:1.6}
+.pl-arrowhead{fill:var(--control)}
+.pl-arrowhead.hl{fill:var(--accent)}
+.pl-tie{stroke:var(--rule);stroke-width:1.3;stroke-dasharray:3 3}
+.pl-out{fill:var(--accent-soft)}
+.pl-outt{fill:var(--accent);font-size:11.5px;font-weight:600}
+.pl-loop{stroke:var(--accent);stroke-width:1.5;fill:none;stroke-dasharray:4 3}
+.pl-loopt{fill:var(--accent);font-size:11px;font-style:italic}
 </style>
 </head>
 <body>
@@ -765,21 +835,16 @@ footer .foot-base{display:flex;justify-content:space-between;flex-wrap:wrap;gap:
         <h2>The data</h2>
         <p>A relational database covering the store’s catalogue and sales. Revenue lives at the invoice-line level, so every question means joining sales back to the catalogue or to customers.</p>
         <div class="pvis" style="margin-top:20px">
-          <div class="pvis-title">Database schema</div>
-          <div class="pvis-sub">Highlighted tables are the path from a sale to its genre.</div>
-          <svg viewBox="0 0 510 200" role="img" aria-label="Schema: Artist to Album to Track, Genre to Track, Track to InvoiceLine, InvoiceLine to Invoice, Invoice to Customer.">
-            <path class="d-line" d="M110 48H140"/><path class="d-line" d="M240 48H270"/>
-            <path class="d-line hl" d="M400 48H370"/><path class="d-line hl" d="M320 66V150"/>
-            <path class="d-line" d="M270 168H240"/><path class="d-line" d="M140 168H110"/>
-            <rect class="d-box" x="10" y="30" width="100" height="36" rx="8"/><text class="d-t" x="60" y="53" text-anchor="middle">Artist</text>
-            <rect class="d-box" x="140" y="30" width="100" height="36" rx="8"/><text class="d-t" x="190" y="53" text-anchor="middle">Album</text>
-            <rect class="d-box hl" x="270" y="30" width="100" height="36" rx="8"/><text class="d-t" x="320" y="53" text-anchor="middle">Track</text>
-            <rect class="d-box hl" x="400" y="30" width="100" height="36" rx="8"/><text class="d-t" x="450" y="53" text-anchor="middle">Genre</text>
-            <rect class="d-box" x="10" y="150" width="100" height="36" rx="8"/><text class="d-t" x="60" y="173" text-anchor="middle">Customer</text>
-            <rect class="d-box" x="140" y="150" width="100" height="36" rx="8"/><text class="d-t" x="190" y="173" text-anchor="middle">Invoice</text>
-            <rect class="d-box hl" x="270" y="150" width="100" height="36" rx="8"/><text class="d-t" x="320" y="173" text-anchor="middle">InvoiceLine</text>
-            <text class="d-s" x="330" y="112">price × quantity</text>
-          </svg>
+          <div class="pvis-title">Entity relationship diagram</div>
+          <div class="pvis-sub">Simplified to the tables used in the analysis. Highlighted tables and columns form the path from a sale to its genre.</div>
+          <div class="diagram" id="erdDiagram"></div>
+          <div class="dlegend">
+            <span><b class="k-badge pk">PK</b>Primary key</span>
+            <span><b class="k-badge fk">FK</b>Foreign key</span>
+            <span><svg width="34" height="14" aria-hidden="true"><path d="M2 7H32M8 2V12" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>One</span>
+            <span><svg width="34" height="14" aria-hidden="true"><path d="M2 7H32M20 7L32 1M20 7L32 13" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>Many</span>
+            <span><i class="k-used"></i>Used in the genre revenue query</span>
+          </div>
         </div>
       </section>
       <section class="psec" id="mu-approach">
@@ -872,32 +937,9 @@ footer .foot-base{display:flex;justify-content:space-between;flex-wrap:wrap;gap:
         <p>KPIs sit at the top for the headline answer, with detail views below. Filters apply across every panel, so selecting an airline updates the whole dashboard.</p>
         <div class="pvis" style="margin-top:20px">
           <div class="pvis-title">Dashboard layout</div>
-          <div class="pvis-sub">Schematic of the layout; bar lengths are placeholders, not results.</div>
-          <svg viewBox="0 0 480 330" role="img" aria-label="Dashboard wireframe with filters, four KPI tiles, a busiest airports panel, a monthly delay trend and a delay causes chart.">
-            <rect class="d-panel" x="0" y="0" width="480" height="40" rx="8"/>
-            <text class="d-t" x="14" y="25">Filters</text>
-            <rect class="d-box" x="80" y="10" width="90" height="20" rx="10"/><text class="d-s" x="125" y="24" text-anchor="middle">Airline</text>
-            <rect class="d-box" x="180" y="10" width="90" height="20" rx="10"/><text class="d-s" x="225" y="24" text-anchor="middle">Month</text>
-            <rect class="d-box" x="280" y="10" width="90" height="20" rx="10"/><text class="d-s" x="325" y="24" text-anchor="middle">Airport</text>
-            <rect class="d-panel" x="0" y="52" width="111" height="54" rx="8"/><text class="d-s" x="12" y="72">Flights</text><rect class="d-ink" x="12" y="82" width="60" height="10" rx="3"/>
-            <rect class="d-panel" x="123" y="52" width="111" height="54" rx="8"/><text class="d-s" x="135" y="72">% delayed</text><rect class="d-ink" x="135" y="82" width="44" height="10" rx="3"/>
-            <rect class="d-panel" x="246" y="52" width="111" height="54" rx="8"/><text class="d-s" x="258" y="72">% cancelled</text><rect class="d-ink" x="258" y="82" width="30" height="10" rx="3"/>
-            <rect class="d-panel" x="369" y="52" width="111" height="54" rx="8"/><text class="d-s" x="381" y="72">Avg delay</text><rect class="d-ink" x="381" y="82" width="50" height="10" rx="3"/>
-            <rect class="d-panel" x="0" y="118" width="234" height="210" rx="8"/>
-            <text class="d-t" x="14" y="140">Busiest airports</text>
-            <rect class="d-ink" x="14" y="156" width="190" height="14" rx="3"/><rect class="d-ink" x="14" y="178" width="162" height="14" rx="3"/>
-            <rect class="d-ink" x="14" y="200" width="140" height="14" rx="3"/><rect class="d-ink" x="14" y="222" width="118" height="14" rx="3"/>
-            <rect class="d-ink" x="14" y="244" width="100" height="14" rx="3"/><rect class="d-ink" x="14" y="266" width="88" height="14" rx="3"/>
-            <rect class="d-soft" x="14" y="288" width="72" height="14" rx="3"/>
-            <rect class="d-panel" x="246" y="118" width="234" height="100" rx="8"/>
-            <text class="d-t" x="260" y="140">Monthly delay pattern</text>
-            <path class="d-stroke" d="M262 196 L290 184 L318 190 L346 170 L374 160 L402 174 L430 186 L458 178"/>
-            <rect class="d-panel" x="246" y="228" width="234" height="100" rx="8"/>
-            <text class="d-t" x="260" y="250">Delay causes</text>
-            <text class="d-s" x="260" y="270">Airline</text><text class="d-s" x="260" y="288">Late aircraft</text><text class="d-s" x="260" y="306">Air system</text><text class="d-s" x="260" y="322">Weather, security</text>
-            <rect class="d-ink" x="366" y="261" width="96" height="11" rx="3"/><rect class="d-ink" x="366" y="279" width="84" height="11" rx="3"/>
-            <rect class="d-ink" x="366" y="297" width="64" height="11" rx="3"/><rect class="d-soft" x="366" y="313" width="22" height="11" rx="3"/>
-          </svg>
+          <div class="pvis-sub">Headline KPIs on top, detail views below, filters across every panel.</div>
+          <div class="diagram" id="dashDiagram"></div>
+          <p style="color:var(--muted);font-size:.85rem;margin:12px 0 0">Mockup of the layout and interactions. Shapes, bubble sizes and values are illustrative, not results; open the dashboard for the real figures.</p>
         </div>
       </section>
       <section class="psec" id="fl-delivered">
@@ -945,6 +987,11 @@ footer .foot-base{display:flex;justify-content:space-between;flex-wrap:wrap;gap:
       </section>
       <section class="psec" id="ed-workflow">
         <h2>Workflow</h2>
+        <div class="pvis" style="margin-bottom:24px">
+          <div class="pvis-title">Analysis pipeline</div>
+          <div class="pvis-sub">Each step produces something concrete. Exploring often uncovers new issues, which sends the data back for more cleaning.</div>
+          <div class="diagram" id="pipeDiagram"></div>
+        </div>
         <ol class="numbered">
           <li><div><b>Load</b>Read the raw data into Pandas and get a first look at its shape and columns.</div></li>
           <li><div><b>Assess</b>Check data types, missing values, duplicates and impossible values.</div></li>
@@ -1189,6 +1236,172 @@ menuBtn.addEventListener('click', () => {
 let rt; window.addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(renderAll, 150); });
 matchMedia('(prefers-color-scheme: dark)').addEventListener('change', renderAll);
 if (document.fonts && document.fonts.ready) document.fonts.ready.then(renderAll);
+
+/* ================= Diagrams ================= */
+const esc = t => String(t).replace(/&/g,'&amp;').replace(/</g,'&lt;');
+
+/* --- Entity-relationship diagram (crow's foot notation) --- */
+function drawERD(el){
+  const W = 160, HEAD = 32, ROW = 22;
+  const T = {
+    Artist:     {x:20,  y:20,  hl:false, cols:[['ArtistId','PK'],['Name','']]},
+    Album:      {x:220, y:20,  hl:false, cols:[['AlbumId','PK'],['Title',''],['ArtistId','FK']]},
+    Track:      {x:420, y:20,  hl:true,  cols:[['TrackId','PK',1],['Name',''],['AlbumId','FK'],['GenreId','FK',1],['UnitPrice','']]},
+    Genre:      {x:620, y:20,  hl:true,  cols:[['GenreId','PK',1],['Name','',1]]},
+    Employee:   {x:20,  y:226, hl:false, cols:[['EmployeeId','PK'],['FirstName',''],['LastName',''],['Title','']]},
+    Customer:   {x:220, y:226, hl:false, cols:[['CustomerId','PK'],['FirstName',''],['Country',''],['SupportRepId','FK']]},
+    Invoice:    {x:420, y:226, hl:false, cols:[['InvoiceId','PK'],['CustomerId','FK'],['InvoiceDate',''],['BillingCountry',''],['Total','']]},
+    InvoiceLine:{x:620, y:226, hl:true,  cols:[['InvoiceLineId','PK'],['InvoiceId','FK'],['TrackId','FK',1],['UnitPrice','',1],['Quantity','',1]]}
+  };
+  const rowY = (t,i) => T[t].y + HEAD + i*ROW + ROW/2;
+  const H = t => HEAD + T[t].cols.length*ROW;
+  let lines = '', boxes = '';
+
+  // markers: "one" bar and "many" crow's foot at point (x,y), dir = unit vector pointing into the table
+  function one(x,y,dx,dy,c){ const px=-dy, py=dx, bx=x-dx*9, by=y-dy*9;
+    return `<line class="${c}" x1="${bx+px*6}" y1="${by+py*6}" x2="${bx-px*6}" y2="${by-py*6}"/>`; }
+  function many(x,y,dx,dy,c){ const px=-dy, py=dx, sx=x-dx*12, sy=y-dy*12;
+    return `<path class="${c}" d="M${sx} ${sy}L${x+px*7} ${y+py*7}M${sx} ${sy}L${x} ${y}M${sx} ${sy}L${x-px*7} ${y-py*7}"/>`; }
+
+  // horizontal link from one-side table (a) to many-side table (b)
+  function hlink(a,ai,b,bi,hl){
+    const c = 'er-line' + (hl?' hl':''), ya = rowY(a,ai), yb = rowY(b,bi);
+    const aRight = T[a].x < T[b].x;
+    const xa = aRight ? T[a].x+W : T[a].x, xb = aRight ? T[b].x : T[b].x+W, mx = (xa+xb)/2;
+    const d = aRight ? 1 : -1;
+    lines += `<path class="${c}" d="M${xa} ${ya}H${mx}V${yb}H${xb}"/>`;
+    lines += one(xa,ya,-d,0,c) + many(xb,yb,d,0,c);
+  }
+  hlink('Artist',0,'Album',2);
+  hlink('Album',0,'Track',2);
+  hlink('Genre',0,'Track',3,true);
+  hlink('Employee',0,'Customer',3);
+  hlink('Customer',0,'Invoice',1);
+  hlink('Invoice',0,'InvoiceLine',1);
+  // Track (one) to InvoiceLine (many), routed below Track
+  { const c='er-line hl', x1=T.Track.x+W/2, y1=T.Track.y+H('Track'), x2=T.InvoiceLine.x+W/2, y2=T.InvoiceLine.y, ym=(y1+y2)/2+6;
+    lines += `<path class="${c}" d="M${x1} ${y1}V${ym}H${x2}V${y2}"/>` + one(x1,y1,0,-1,c) + many(x2,y2,0,1,c);
+    lines += `<text class="er-note" x="${(x1+x2)/2}" y="${ym-8}" text-anchor="middle">each sale line is one track</text>`; }
+
+  for (const [name,t] of Object.entries(T)){
+    const h = H(name);
+    boxes += `<g><rect class="er-card" x="${t.x}" y="${t.y}" width="${W}" height="${h}" rx="9"/>`;
+    boxes += `<path class="er-head${t.hl?' hl':''}" d="M${t.x} ${t.y+HEAD}V${t.y+9}a9 9 0 0 1 9-9H${t.x+W-9}a9 9 0 0 1 9 9V${t.y+HEAD}Z"/>`;
+    boxes += `<text class="er-title${t.hl?' hl':''}" x="${t.x+12}" y="${t.y+21}">${name}</text>`;
+    t.cols.forEach(([col,key,used],i) => {
+      const ry = t.y + HEAD + i*ROW;
+      if (used) boxes += `<rect class="er-used" x="${t.x+1}" y="${ry}" width="${W-2}" height="${i===t.cols.length-1?ROW-2:ROW}"/>`;
+      if (i) boxes += `<line class="er-sep" x1="${t.x+10}" x2="${t.x+W-10}" y1="${ry}" y2="${ry}"/>`;
+      boxes += `<text class="er-col${key==='PK'?' pk':''}" x="${t.x+12}" y="${ry+15}">${col}</text>`;
+      if (key) boxes += `<text class="er-key ${key.toLowerCase()}" x="${t.x+W-12}" y="${ry+15}" text-anchor="end">${key}</text>`;
+    });
+    boxes += `</g>`;
+  }
+  el.innerHTML = `<svg viewBox="0 0 800 376" role="img" aria-label="Entity relationship diagram of the music store database. Artist has many Albums, Album has many Tracks, Genre has many Tracks, Track has many InvoiceLines, Invoice has many InvoiceLines, Customer has many Invoices, Employee supports many Customers. The path from InvoiceLine through Track to Genre is highlighted.">${lines}${boxes}</svg>`;
+}
+
+/* --- Dashboard mockup --- */
+function drawDashboard(el){
+  let s = '';
+  const panel = (x,y,w,h,title) => `<rect class="dd-panel" x="${x}" y="${y}" width="${w}" height="${h}" rx="10"/>` + (title?`<text class="dd-h" x="${x+16}" y="${y+26}">${title}</text>`:'');
+  // canvas
+  s += `<rect class="dd-canvas" x="0" y="0" width="800" height="540" rx="14"/>`;
+  // header
+  s += `<text class="dd-title" x="20" y="36">US flight performance, 2015</text>`;
+  s += `<text class="dd-s" x="20" y="54">Domestic flights, U.S. Department of Transportation</text>`;
+  ['Airline','Month','Airport'].forEach((f,i) => {
+    const x = 452 + i*112;
+    s += `<rect class="dd-filter" x="${x}" y="22" width="104" height="30" rx="8"/><text class="dd-s ink" x="${x+12}" y="41">${f}</text><path class="dd-chev" d="M${x+88} 34l4 4 4-4"/>`;
+  });
+  // KPI tiles
+  const kpis = [['Flights','M14 22 L30 18 L46 20 L62 14 L78 16 L94 10'],['Delayed 15+ min','M14 16 L30 20 L46 12 L62 18 L78 10 L94 14'],['Cancelled','M14 20 L30 20 L46 8 L62 18 L78 19 L94 17'],['Avg. arrival delay','M14 18 L30 14 L46 16 L62 10 L78 14 L94 12']];
+  kpis.forEach(([lab,path],i) => {
+    const x = 20 + i*194, y = 72;
+    s += panel(x,y,182,84);
+    s += `<text class="dd-s" x="${x+16}" y="${y+26}">${lab}</text>`;
+    s += `<rect class="dd-sk strong" x="${x+16}" y="${y+40}" width="${[62,52,44,56][i]}" height="20" rx="4"/>`;
+    s += `<rect class="dd-sk" x="${x+16}" y="${y+66}" width="44" height="7" rx="3"/>`;
+    s += `<g transform="translate(${x+82},${y+38})"><path class="dd-spark" d="${path}"/></g>`;
+  });
+  // map panel
+  s += panel(20,172,468,236,'Delays by origin airport');
+  s += `<text class="dd-s" x="472" y="198" text-anchor="end">bubble size: flights</text>`;
+  const mx = lon => 44 + (lon+125)/(58)*420, my = lat => 392 - (lat-24)/(26)*176;
+  for (let lon=-120; lon<=-70; lon+=10) s += `<line class="dd-grat" x1="${mx(lon)}" x2="${mx(lon)}" y1="212" y2="396"/>`;
+  for (let lat=28; lat<=48; lat+=5) s += `<line class="dd-grat" x1="36" x2="476" y1="${my(lat)}" y2="${my(lat)}"/>`;
+  const ap = [['ATL',-84.4,33.6,15],['ORD',-87.9,42.0,13],['DFW',-97.0,32.9,12],['DEN',-104.7,39.9,11],['LAX',-118.4,33.9,11],['SFO',-122.4,37.6,9],
+    ['PHX',-112.0,33.4,9],['IAH',-95.3,30.0,8],['LAS',-115.2,36.1,8],['MSP',-93.2,44.9,8],['SEA',-122.3,47.4,7],['JFK',-73.8,40.6,8],
+    ['BOS',-71.0,42.4,7],['MIA',-80.3,25.8,6],['CLT',-80.9,35.2,8],['DTW',-83.4,42.2,7],['SLC',-112.0,40.8,7],['MCO',-81.3,28.4,7]];
+  ap.forEach(([c,lon,lat,r]) => {
+    s += `<circle class="dd-bub" cx="${mx(lon).toFixed(1)}" cy="${my(lat).toFixed(1)}" r="${r}"/>`;
+    if (c === 'ORD' || c === 'DFW') s += `<text class="dd-code" x="${(mx(lon)-(c==='ORD'?24:r+6)).toFixed(1)}" y="${(my(lat)+4).toFixed(1)}" text-anchor="end">${c}</text>`;
+    else if (r >= 9) s += `<text class="dd-code" x="${mx(lon).toFixed(1)}" y="${(my(lat)+r+12).toFixed(1)}" text-anchor="middle">${c}</text>`;
+  });
+  // callout on ORD
+  const ox = mx(-87.9), oy = my(42.0);
+  s += `<circle class="dd-ring" cx="${ox}" cy="${oy}" r="19"/>`;
+  s += `<path class="dd-callout-line" d="M${ox-12} ${oy-14} L${ox-40} ${oy-32} H${ox-56}"/>`;
+  s += `<rect class="dd-callout" x="${ox-212}" y="${oy-48}" width="156" height="32" rx="7"/>`;
+  s += `<text class="dd-callout-t" x="${ox-134}" y="${oy-28}" text-anchor="middle">Click to filter all views</text>`;
+
+  // delay causes
+  s += panel(504,172,276,110,'Delay minutes by cause');
+  const segs = [['Late aircraft',.38,'c1'],['Airline',.30,'c2'],['Air system',.24,'c3'],['Weather',.06,'c4'],['Security',.02,'c5']];
+  let cx = 520;
+  segs.forEach(([,w,c]) => { const ww = w*244; s += `<rect class="dd-${c}" x="${cx}" y="208" width="${ww-2}" height="18" rx="3"/>`; cx += ww; });
+  segs.forEach(([n,,c],i) => { const lx = 520 + (i%3)*86, ly = 248 + Math.floor(i/3)*18;
+    s += `<rect class="dd-${c}" x="${lx}" y="${ly-9}" width="10" height="10" rx="2"/><text class="dd-s" x="${lx+15}" y="${ly}">${n}</text>`; });
+
+  // monthly trend
+  s += panel(504,298,276,110,'Delay rate by month');
+  const vals = [.22,.21,.19,.17,.18,.23,.24,.21,.14,.15,.16,.21];
+  const tx = i => 524 + i*21.5, ty = v => 388 - (v-.12)/.14*56;
+  s += `<line class="dd-grat" x1="520" x2="764" y1="388" y2="388"/>`;
+  s += `<path class="dd-area" d="M${tx(0)} 388 ${vals.map((v,i)=>`L${tx(i)} ${ty(v).toFixed(1)}`).join(' ')} L${tx(11)} 388Z"/>`;
+  s += `<path class="dd-trend" d="${vals.map((v,i)=>(i?'L':'M')+tx(i)+' '+ty(v).toFixed(1)).join(' ')}"/>`;
+  'JFMAMJJASOND'.split('').forEach((m,i) => s += `<text class="dd-tick" x="${tx(i)}" y="402" text-anchor="middle">${m}</text>`);
+
+  // airlines ranked
+  s += panel(20,424,468,100,'On-time rate by airline');
+  [200,176,160,138].forEach((w,i) => {
+    const y = 460 + i*15;
+    s += `<rect class="dd-sk" x="36" y="${y+2}" width="58" height="7" rx="3"/><rect class="dd-c${i===0?1:2}" x="106" y="${y}" width="${w}" height="10" rx="3"/>`;
+  });
+  // cancellations
+  s += panel(504,424,276,100,'Cancellations by month');
+  [34,40,52,18,16,20,22,18,12,14,12,24].forEach((h,i) => {
+    s += `<rect class="dd-c${h>45?1:3}" x="${522 + i*20.5}" y="${512-h}" width="13" height="${h}" rx="2"/>`;
+  });
+  el.innerHTML = `<svg viewBox="0 0 800 540" role="img" aria-label="Dashboard mockup with filters for airline, month and origin airport; KPI tiles for flights, delayed flights, cancellations and average delay; a bubble map of delays by airport where clicking an airport filters every view; delay minutes by cause; delay rate by month; on-time rate by airline; and cancellations by month.">${s}</svg>`;
+}
+
+/* --- EDA pipeline --- */
+function drawPipeline(el){
+  const st = [['Load','Raw file','read_csv, head()'],['Assess','Issues log','nulls and duplicates'],['Clean','Tidy DataFrame','fix, drop, reshape'],
+    ['Explore','Charts and stats','question by question'],['Conclude','Findings report','evidence and limits']];
+  let s = `<defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="pl-arrowhead" d="M0 0L10 5L0 10z"/></marker><marker id="arr2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="pl-arrowhead hl" d="M0 0L10 5L0 10z"/></marker></defs>`;
+  const bw = 140, gap = 20, y = 44;
+  st.forEach(([n,out,sub],i) => {
+    const x = 14 + i*(bw+gap), hl = i===2 || i===3;
+    if (i) s += `<line class="pl-arrow" x1="${x-gap+2}" y1="${y+34}" x2="${x-3}" y2="${y+34}" marker-end="url(#arr)"/>`;
+    s += `<rect class="pl-box${hl?' hl':''}" x="${x}" y="${y}" width="${bw}" height="68" rx="12"/>`;
+    s += `<circle class="pl-num" cx="${x+22}" cy="${y+22}" r="11"/><text class="pl-numt" x="${x+22}" y="${y+26}" text-anchor="middle">${i+1}</text>`;
+    s += `<text class="pl-name" x="${x+40}" y="${y+27}">${n}</text>`;
+    s += `<text class="pl-sub" x="${x+16}" y="${y+53}">${esc(sub)}</text>`;
+    s += `<line class="pl-tie" x1="${x+bw/2}" x2="${x+bw/2}" y1="${y+68}" y2="${y+92}"/>`;
+    s += `<rect class="pl-out" x="${x+10}" y="${y+92}" width="${bw-20}" height="28" rx="14"/><text class="pl-outt" x="${x+bw/2}" y="${y+110}" text-anchor="middle">${out}</text>`;
+  });
+  // feedback loop Explore -> Clean
+  const xc = 14 + 2*(bw+gap) + bw/2, xe = 14 + 3*(bw+gap) + bw/2;
+  s += `<path class="pl-loop" d="M${xe} ${y} V${y-20} H${xc} V${y-3}" marker-end="url(#arr2)"/>`;
+  s += `<text class="pl-loopt" x="${(xc+xe)/2}" y="${y-26}" text-anchor="middle">new issue found, clean again</text>`;
+  el.innerHTML = `<svg viewBox="0 0 800 180" role="img" aria-label="Five-step analysis pipeline: load, assess, clean, explore, conclude, each with its output. A loop runs from explore back to clean when new data issues appear.">${s}</svg>`;
+}
+
+drawERD(document.getElementById('erdDiagram'));
+drawDashboard(document.getElementById('dashDiagram'));
+drawPipeline(document.getElementById('pipeDiagram'));
+
 route();
 </script>
 </body>
