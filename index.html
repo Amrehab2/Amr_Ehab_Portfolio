@@ -468,6 +468,83 @@ footer .foot-base{display:flex;justify-content:space-between;flex-wrap:wrap;gap:
 .pl-outt{fill:var(--accent);font-size:11.5px;font-weight:600}
 .pl-loop{stroke:var(--accent);stroke-width:1.5;fill:none;stroke-dasharray:4 3}
 .pl-loopt{fill:var(--accent);font-size:11px;font-style:italic}
+
+/* ================= Interactive flights dashboard ================= */
+.dash{position:relative;background:var(--bg);border:1px solid var(--rule);border-radius:16px;padding:18px}
+.dash-top{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:14px;margin-bottom:14px}
+.dash-title{font-weight:700;font-size:1.15rem;letter-spacing:-.01em}
+.dash-sub{color:var(--muted);font-size:.86rem;display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:2px}
+.sim-badge{background:var(--warn-bg);color:var(--warn-ink);font-weight:600;font-size:.78rem;padding:2px 8px;border-radius:999px}
+.dash-filters{display:flex;flex-wrap:wrap;gap:8px;align-items:flex-end}
+.dash-filters label{display:flex;flex-direction:column;gap:3px;font-size:.76rem;color:var(--muted);font-weight:500}
+.dash-filters select{font:inherit;font-size:.88rem;color:var(--ink);background:var(--surface);border:1px solid var(--rule);border-radius:8px;padding:7px 28px 7px 10px;min-width:130px;max-width:190px;
+  appearance:none;-webkit-appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--muted) 50%),linear-gradient(135deg,var(--muted) 50%,transparent 50%);
+  background-position:calc(100% - 15px) 50%,calc(100% - 10px) 50%;background-size:5px 5px;background-repeat:no-repeat;cursor:pointer}
+.dash-filters select:focus-visible,.dash-reset:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.dash-reset{font:inherit;font-size:.86rem;font-weight:600;padding:7px 12px;border-radius:8px;border:1px solid var(--rule);background:var(--surface);color:var(--accent);cursor:pointer}
+.dash-reset:disabled{color:var(--muted);opacity:.6;cursor:default}
+.dash-status{font-size:.86rem;color:var(--muted);margin:-4px 0 12px}
+.dash-kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:10px}
+.dk{background:var(--surface);border:1px solid var(--rule);border-radius:12px;padding:12px 14px}
+.dk span{display:block;color:var(--muted);font-size:.8rem}
+.dk b{display:block;font-size:1.45rem;font-weight:700;letter-spacing:-.02em;line-height:1.25}
+.dk small{color:var(--muted);font-size:.76rem}
+.dash-grid{display:grid;grid-template-columns:1.65fr 1fr;gap:10px}
+.dash-side{display:grid;gap:10px}
+.dpanel{background:var(--surface);border:1px solid var(--rule);border-radius:12px;padding:12px 14px;min-width:0}
+.dp-h{display:flex;justify-content:space-between;align-items:baseline;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.dp-h b{font-size:.9rem}
+.dp-h span{font-size:.74rem;color:var(--muted)}
+.dpanel svg{display:block;width:100%;height:auto}
+.dpanel svg text{font-family:inherit}
+.fd-grat{stroke:var(--grid);stroke-width:1}
+.fd-bub{fill:var(--accent);stroke:var(--accent);stroke-width:1.2;cursor:pointer;transition:opacity .15s}
+.fd-bub.dim{opacity:.25}
+.fd-bub.sel{stroke:var(--ink);stroke-width:2.6}
+.fd-bub:hover{stroke:var(--ink);stroke-width:2}
+.fd-bub:focus-visible,.fd-hit:focus-visible{outline:none;stroke:var(--ink);stroke-width:3}
+.fd-code{fill:var(--muted);font-size:9.5px;font-weight:600;pointer-events:none}
+.fd-tick{fill:var(--muted);font-size:9.5px}
+.fd-tick.on{fill:var(--accent);font-weight:700}
+.fd-area{fill:var(--accent);opacity:.12}
+.fd-trend{stroke:var(--accent);stroke-width:2;fill:none;stroke-linejoin:round}
+.fd-pt{fill:var(--surface);stroke:var(--accent);stroke-width:1.6}
+.fd-pt.sel{fill:var(--accent)}
+.fd-band{fill:var(--accent-soft);opacity:.8}
+.fd-hit{fill:transparent;cursor:pointer}
+.fd-hit:hover{fill:var(--accent-soft);fill-opacity:.35}
+.cause-bar{display:flex;height:16px;border-radius:5px;overflow:hidden;gap:2px;margin:6px 0 10px}
+.cause-bar .cz{display:block;height:100%}
+.cz.c1{background:var(--accent)}.cz.c2{background:color-mix(in srgb,var(--accent) 70%,var(--surface))}.cz.c3{background:color-mix(in srgb,var(--accent) 42%,var(--surface))}
+.cz.c4{background:var(--control)}.cz.c5{background:color-mix(in srgb,var(--control) 45%,var(--surface))}
+.cause-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr;gap:4px 14px;font-size:.8rem;color:var(--muted)}
+.cause-list li{display:flex;align-items:center;gap:6px}
+.cause-list li .cz{width:9px;height:9px;border-radius:2px;flex:none}
+.cause-list b{margin-left:auto;color:var(--ink);font-weight:600}
+.al-list{display:grid;gap:3px}
+.al-row{display:grid;grid-template-columns:118px 1fr 46px;gap:8px;align-items:center;font:inherit;font-size:.8rem;color:var(--ink);background:none;border:0;padding:4px 6px;border-radius:6px;cursor:pointer;text-align:left}
+.al-row:hover{background:var(--bg)}
+.al-row.sel{background:var(--accent-soft)}
+.al-row.dim{opacity:.45}
+.al-row:focus-visible,.cn-col:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+.al-name{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.al-track{height:10px;background:var(--bg);border-radius:3px;overflow:hidden}
+.al-track i{display:block;height:100%;background:var(--accent);border-radius:3px}
+.al-row b{text-align:right;font-weight:600}
+.cn-cols{display:grid;grid-template-columns:repeat(12,1fr);gap:4px;height:170px}
+.cn-col{display:flex;flex-direction:column;align-items:stretch;gap:4px;background:none;border:0;padding:0;font:inherit;cursor:pointer;min-width:0}
+.cn-bar{flex:1;display:flex;align-items:flex-end;border-radius:4px}
+.cn-bar i{display:block;width:100%;background:color-mix(in srgb,var(--accent) 50%,var(--surface));border-radius:3px 3px 1px 1px;transition:height .25s}
+.cn-col:hover .cn-bar i{background:var(--accent)}
+.cn-col.sel .cn-bar i{background:var(--accent)}
+.cn-col.dim{opacity:.4}
+.cn-col small{font-size:.7rem;color:var(--muted);text-align:center}
+.axis-note{font-size:.72rem;color:var(--muted);margin:6px 0 0}
+.dash-tip{position:absolute;z-index:5;pointer-events:none;background:var(--ink);color:var(--surface);font-size:.8rem;line-height:1.4;padding:8px 10px;border-radius:8px;max-width:240px;box-shadow:var(--shadow)}
+.dash-tip b{display:block;font-weight:600}
+@media (max-width:860px){.dash-grid{grid-template-columns:1fr}.dash-kpis{grid-template-columns:1fr 1fr}.cause-list{grid-template-columns:1fr 1fr}}
+@media (max-width:480px){.dash{padding:12px}.al-row{grid-template-columns:96px 1fr 42px}.dash-filters label{flex:1 1 45%}.dash-filters select{min-width:0;width:100%;max-width:none}}
+@media (prefers-reduced-motion:reduce){.cn-bar i,.fd-bub{transition:none}}
 </style>
 </head>
 <body>
@@ -498,9 +575,9 @@ footer .foot-base{display:flex;justify-content:space-between;flex-wrap:wrap;gap:
   <div class="wrap hero-grid">
     <div>
       <span class="status"><i aria-hidden="true"></i>Open to data analyst roles</span>
-      <p class="who">Amr Ehab, data analyst</p>
-      <h1>Clean data, honest tests, clear decisions.</h1>
-      <p class="lede">I use Python, SQL, Excel and Tableau to answer the questions a business actually has, and I report what the data shows, including when the answer is “don’t ship it.”</p>
+      <p class="who">Amr Ehab, Data Analyst</p>
+      <h1>Rigorous analysis. Clear recommendations.</h1>
+      <p class="lede">Data analyst specialising in experimentation, SQL analysis and dashboard reporting. I use Python, SQL, Excel and Tableau to turn raw data into evidence-based recommendations that stakeholders can act on with confidence.</p>
       <div class="actions">
         <a class="btn primary" href="#projects">See my projects</a>
         <a class="btn" href="mailto:amre2809@gmail.com">Email me</a>
@@ -531,12 +608,12 @@ footer .foot-base{display:flex;justify-content:space-between;flex-wrap:wrap;gap:
   <div class="wrap about">
     <div class="about-text">
       <h2 style="margin-bottom:24px">About me</h2>
-      <p>I’m a data analyst who likes problems that start with a messy spreadsheet and end with a decision. Most of my time goes into the unglamorous part, cleaning and checking data, because that’s where analyses usually go wrong.</p>
-      <p>I care about two things: getting the numbers right, and explaining them so the people who have to act on them can. That means picking the right method, confirming results more than one way, and saying plainly when the data doesn’t support the answer someone hoped for.</p>
+      <p>I am a data analyst focused on helping organisations make better decisions with their data. My work covers the full analytical workflow: defining the business question, preparing and validating the data, applying the appropriate statistical methods, and communicating the findings to both technical and non-technical audiences.</p>
+      <p>I place particular emphasis on data quality and methodological rigour. I validate results through more than one approach and base every recommendation on what the evidence supports, whether it confirms the original hypothesis or challenges it.</p>
     </div>
     <dl class="facts">
       <div><dt>Role</dt><dd>Data analyst</dd></div>
-      <div><dt>Focus</dt><dd>Business and product analytics, experimentation, dashboards</dd></div>
+      <div><dt>Focus</dt><dd>Business analytics, A/B testing, dashboard reporting</dd></div>
       <div><dt>Core stack</dt><dd>Python, SQL, Excel, Tableau</dd></div>
       <div><dt>Open to</dt><dd>Full-time analyst roles and freelance projects</dd></div>
       <div><dt>Contact</dt><dd><a href="mailto:amre2809@gmail.com">amre2809@gmail.com</a></dd></div>
@@ -934,12 +1011,54 @@ footer .foot-base{display:flex;justify-content:space-between;flex-wrap:wrap;gap:
       </section>
       <section class="psec" id="fl-design">
         <h2>Dashboard design</h2>
-        <p>KPIs sit at the top for the headline answer, with detail views below. Filters apply across every panel, so selecting an airline updates the whole dashboard.</p>
+        <p>KPIs sit at the top for the headline answer, with detail views below. Every view is linked: selecting an airport, airline or month filters the rest of the dashboard, the same cross-filtering I set up in Tableau.</p>
         <div class="pvis" style="margin-top:20px">
-          <div class="pvis-title">Dashboard layout</div>
-          <div class="pvis-sub">Headline KPIs on top, detail views below, filters across every panel.</div>
-          <div class="diagram" id="dashDiagram"></div>
-          <p style="color:var(--muted);font-size:.85rem;margin:12px 0 0">Mockup of the layout and interactions. Shapes, bubble sizes and values are illustrative, not results; open the dashboard for the real figures.</p>
+          <div class="pvis-title">Try the dashboard</div>
+          <div class="pvis-sub">Click an airport, airline or month to filter every view, or use the dropdowns. Click the same item again to clear it.</div>
+          <div class="dash" id="flightDash">
+            <div class="dash-top">
+              <div>
+                <div class="dash-title">US flight performance, 2015</div>
+                <div class="dash-sub"><span class="sim-badge">Simulated data</span>18 major airports, 8 airlines</div>
+              </div>
+              <div class="dash-filters">
+                <label>Airline<select id="fdAirline"></select></label>
+                <label>Month<select id="fdMonth"></select></label>
+                <label>Airport<select id="fdAirport"></select></label>
+                <button type="button" class="dash-reset" id="fdReset">Clear filters</button>
+              </div>
+            </div>
+            <p class="dash-status" id="fdStatus" aria-live="polite"></p>
+            <div class="dash-kpis" id="fdKpis"></div>
+            <div class="dash-grid">
+              <div class="dpanel">
+                <div class="dp-h"><b>Delay rate by origin airport</b><span>Size shows flights; darker means more delays</span></div>
+                <svg id="fdMap" viewBox="0 0 480 270" role="group" aria-label="Map of airports. Select an airport to filter."></svg>
+              </div>
+              <div class="dash-side">
+                <div class="dpanel">
+                  <div class="dp-h"><b>Delay minutes by cause</b></div>
+                  <div class="cause-bar" id="fdCauseBar"></div>
+                  <ul class="cause-list" id="fdCauseList"></ul>
+                </div>
+                <div class="dpanel">
+                  <div class="dp-h"><b>Delay rate by month</b><span>Select a month</span></div>
+                  <svg id="fdMonthly" viewBox="0 0 300 150" role="group" aria-label="Monthly delay rate. Select a month to filter."></svg>
+                </div>
+              </div>
+              <div class="dpanel">
+                <div class="dp-h"><b>On-time rate by airline</b><span>Select an airline</span></div>
+                <div class="al-list" id="fdAirlines"></div>
+                <p class="axis-note">Bars start at 60% to make differences visible.</p>
+              </div>
+              <div class="dpanel">
+                <div class="dp-h"><b>Cancellation rate by month</b><span>Select a month</span></div>
+                <div class="cn-cols" id="fdCancels"></div>
+              </div>
+            </div>
+            <div class="dash-tip" id="fdTip" role="tooltip" hidden></div>
+          </div>
+          <p style="color:var(--muted);font-size:.85rem;margin:12px 0 0">The original dashboard was built in Tableau on the real DOT data. This browser version recreates its layout and cross-filtering with simulated numbers, so the figures here are not real results. Open the Tableau dashboard for the actual analysis.</p>
         </div>
       </section>
       <section class="psec" id="fl-delivered">
@@ -1399,8 +1518,176 @@ function drawPipeline(el){
 }
 
 drawERD(document.getElementById('erdDiagram'));
-drawDashboard(document.getElementById('dashDiagram'));
 drawPipeline(document.getElementById('pipeDiagram'));
+
+/* ================= Interactive flights dashboard (simulated data) ================= */
+(function(){
+  const root = document.getElementById('flightDash');
+  if (!root) return;
+  const R = rng(2015);
+  const MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  // code, name, lon, lat, relative size, delay propensity
+  const AP = [['ATL','Atlanta',-84.4,33.6,1.00,0.90],['ORD','Chicago O’Hare',-87.9,42.0,0.85,1.25],['DFW','Dallas/Fort Worth',-97.0,32.9,0.75,1.05],
+    ['DEN','Denver',-104.7,39.9,0.65,1.05],['LAX','Los Angeles',-118.4,33.9,0.60,0.95],['SFO','San Francisco',-122.4,37.6,0.45,1.15],
+    ['PHX','Phoenix',-112.0,33.4,0.45,0.85],['IAH','Houston',-95.3,30.0,0.45,1.00],['LAS','Las Vegas',-115.2,36.1,0.40,1.00],
+    ['MSP','Minneapolis',-93.2,44.9,0.38,0.85],['SEA','Seattle',-122.3,47.4,0.35,0.80],['JFK','New York JFK',-73.8,40.6,0.33,1.15],
+    ['BOS','Boston',-71.0,42.4,0.30,1.05],['MIA','Miami',-80.3,25.8,0.25,1.05],['CLT','Charlotte',-80.9,35.2,0.45,0.95],
+    ['DTW','Detroit',-83.4,42.2,0.37,0.90],['SLC','Salt Lake City',-112.0,40.8,0.30,0.80],['MCO','Orlando',-81.3,28.4,0.32,1.00]];
+  // name, network share, delay propensity, hubs
+  const AL = [['American Airlines',0.9,1.05,['DFW','CLT','MIA','PHX','ORD']],['Delta Air Lines',1.0,0.85,['ATL','MSP','DTW','SLC','JFK']],
+    ['United Airlines',0.75,1.10,['ORD','IAH','DEN','SFO']],['Southwest Airlines',1.25,1.05,['LAS','PHX','DEN','MCO']],
+    ['JetBlue Airways',0.3,1.25,['JFK','BOS','MCO']],['Alaska Airlines',0.2,0.75,['SEA']],['Spirit Airlines',0.13,1.35,[]],['SkyWest Airlines',0.6,0.95,['SLC','DEN']]];
+  const CAUSES = ['Late aircraft','Airline','Air system','Weather','Security'];
+  const DR = [.21,.20,.19,.16,.17,.23,.24,.21,.14,.15,.15,.22];
+  const CR = [.025,.04,.02,.011,.009,.014,.015,.011,.006,.007,.006,.014];
+  const VOL = [.93,.86,.99,.97,1,1.03,1.06,1.06,.97,1,.96,.99];
+  const SNOWY = ['ORD','BOS','DEN','MSP','DTW','JFK'];
+
+  const cells = [];
+  AP.forEach((ap,a) => AL.forEach((al,l) => MONTHS.forEach((_,m) => {
+    const share = al[1] * (al[3].includes(ap[0]) ? 3.2 : 0.55);
+    const f = Math.round(9000*ap[4]*share*VOL[m]*(0.85+0.3*R()));
+    const rate = Math.min(.45, DR[m]*ap[5]*al[2]*(0.85+0.3*R()));
+    const can = Math.round(f*CR[m]*ap[5]*(SNOWY.includes(ap[0]) && (m<2||m===11) ? 1.5 : 1)*(0.6+0.8*R()));
+    const del = Math.round((f-can)*rate);
+    const dmin = del*(48+22*R());
+    const sh = [.39,.32,.23,.055*((m<2||m===11)?2:1)*(SNOWY.includes(ap[0])?1.4:1),.005];
+    const tot = sh.reduce((x,y)=>x+y,0);
+    cells.push({a,l,m,f,can,del,dmin,mins:sh.map(x=>dmin*x/tot)});
+  })));
+
+  const S = {a:null, l:null, m:null};
+  const pass = (c,ex) => (ex==='a'||S.a===null||c.a===S.a) && (ex==='l'||S.l===null||c.l===S.l) && (ex==='m'||S.m===null||c.m===S.m);
+  const blank = () => ({f:0,can:0,del:0,dmin:0,mins:[0,0,0,0,0]});
+  const add = (t,c) => { t.f+=c.f; t.can+=c.can; t.del+=c.del; t.dmin+=c.dmin; c.mins.forEach((v,i)=>t.mins[i]+=v); };
+  function total(ex){ const t = blank(); cells.forEach(c => pass(c,ex) && add(t,c)); return t; }
+  function group(ex,key,n){ const g = Array.from({length:n}, blank); cells.forEach(c => pass(c,ex) && add(g[c[key]],c)); return g; }
+  const dRate = t => t.f-t.can ? t.del/(t.f-t.can) : 0;
+  const cRate = t => t.f ? t.can/t.f : 0;
+  const pct = (v,d=1) => (v*100).toFixed(d) + '%';
+  const num = v => Math.round(v).toLocaleString('en-US');
+  const OVERALL = (() => { const t = blank(); cells.forEach(c => add(t,c)); return t; })();
+
+  const $ = id => document.getElementById(id);
+
+  function renderKpis(){
+    const t = total(null), o = OVERALL, filtered = S.a!==null || S.l!==null || S.m!==null;
+    const tiles = [
+      ['Flights', num(t.f), filtered ? pct(t.f/o.f) + ' of all flights' : 'All selected flights'],
+      ['Delayed 15+ min', pct(dRate(t)), 'Overall ' + pct(dRate(o))],
+      ['Cancelled', pct(cRate(t),2), 'Overall ' + pct(cRate(o),2)],
+      ['Avg. delay when late', Math.round(t.dmin/Math.max(t.del,1)) + ' min', 'Overall ' + Math.round(o.dmin/o.del) + ' min']
+    ];
+    $('fdKpis').innerHTML = tiles.map(([l,v,s]) => `<div class="dk"><span>${l}</span><b>${v}</b><small>${s}</small></div>`).join('');
+  }
+
+  function renderMap(){
+    const g = group('a','a',AP.length), maxF = Math.max(...g.map(t=>t.f));
+    const rates = g.map(dRate), lo = Math.min(...rates), hi = Math.max(...rates);
+    const mx = lon => 26 + (lon+125)/58*428, my = lat => 252 - (lat-24)/26*226;
+    let s = '';
+    for (let lon=-120; lon<=-70; lon+=10) s += `<line class="fd-grat" x1="${mx(lon)}" x2="${mx(lon)}" y1="14" y2="258"/>`;
+    for (let lat=28; lat<=48; lat+=5) s += `<line class="fd-grat" x1="14" x2="466" y1="${my(lat)}" y2="${my(lat)}"/>`;
+    const order = AP.map((_,i)=>i).sort((x,y)=>g[y].f-g[x].f);
+    let labels = '';
+    order.forEach(i => {
+      const ap = AP[i], t = g[i], r = 4 + 17*Math.sqrt(t.f/maxF), x = mx(ap[2]), y = my(ap[3]);
+      const op = (0.22 + 0.7*((rates[i]-lo)/Math.max(hi-lo,1e-9))).toFixed(2);
+      const cls = 'fd-bub' + (S.a===i ? ' sel' : '') + (S.a!==null && S.a!==i ? ' dim' : '');
+      const tip = `<b>${ap[1]} (${ap[0]})</b>${num(t.f)} flights<br>${pct(rates[i])} delayed, ${pct(cRate(t),2)} cancelled`;
+      s += `<circle class="${cls}" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${r.toFixed(1)}" fill-opacity="${op}" data-a="${i}" data-tip="${tip.replace(/"/g,'&quot;')}" tabindex="0" role="button" aria-pressed="${S.a===i}" aria-label="${ap[1]}: ${pct(rates[i])} delayed. Select to filter."/>`;
+      if (r >= 11 || S.a===i){
+        const pos = {ORD:'l', DFW:'l', MSP:'t', LAS:'l', BOS:'t'}[ap[0]] || 'b';
+        labels += pos==='l' ? `<text class="fd-code" x="${(x-r-5).toFixed(1)}" y="${(y+3.5).toFixed(1)}" text-anchor="end">${ap[0]}</text>`
+                : pos==='t' ? `<text class="fd-code" x="${x.toFixed(1)}" y="${(y-r-5).toFixed(1)}" text-anchor="middle">${ap[0]}</text>`
+                            : `<text class="fd-code" x="${x.toFixed(1)}" y="${(y+r+11).toFixed(1)}" text-anchor="middle">${ap[0]}</text>`;
+      }
+    });
+    $('fdMap').innerHTML = s + labels;
+  }
+
+  function renderCauses(){
+    const t = total(null), sum = t.mins.reduce((x,y)=>x+y,0) || 1;
+    $('fdCauseBar').innerHTML = t.mins.map((v,i) => `<i class="cz c${i+1}" style="width:${(v/sum*100).toFixed(2)}%" data-tip="<b>${CAUSES[i]}</b>${pct(v/sum)} of delay minutes"></i>`).join('');
+    $('fdCauseList').innerHTML = t.mins.map((v,i) => `<li><i class="cz c${i+1}"></i>${CAUSES[i]}<b>${pct(v/sum)}</b></li>`).join('');
+  }
+
+  function renderMonthly(){
+    const g = group('m','m',12), rates = g.map(dRate);
+    const lo = Math.floor((Math.min(...rates)-.02)*50)/50, hi = Math.ceil((Math.max(...rates)+.02)*50)/50;
+    const W=300, H=150, L=34, Rt=8, T=10, B=22, x = i => L + i*(W-L-Rt)/11, y = v => T + (hi-v)/(hi-lo)*(H-T-B);
+    let s = '';
+    for (let k=0;k<=2;k++){ const v = lo + (hi-lo)*k/2; s += `<line class="fd-grat" x1="${L}" x2="${W-Rt}" y1="${y(v)}" y2="${y(v)}"/><text class="fd-tick" x="${L-6}" y="${y(v)+3.5}" text-anchor="end">${Math.round(v*100)}%</text>`; }
+    if (S.m!==null) s += `<rect class="fd-band" x="${x(S.m)-10}" y="${T}" width="20" height="${H-T-B}" rx="4"/>`;
+    s += `<path class="fd-area" d="M${x(0)} ${H-B} ${rates.map((v,i)=>`L${x(i).toFixed(1)} ${y(v).toFixed(1)}`).join(' ')} L${x(11)} ${H-B}Z"/>`;
+    s += `<path class="fd-trend" d="${rates.map((v,i)=>(i?'L':'M')+x(i).toFixed(1)+' '+y(v).toFixed(1)).join(' ')}"/>`;
+    rates.forEach((v,i) => {
+      s += `<circle class="fd-pt${S.m===i?' sel':''}" cx="${x(i).toFixed(1)}" cy="${y(v).toFixed(1)}" r="${S.m===i?5:3}"/>`;
+      s += `<text class="fd-tick${S.m===i?' on':''}" x="${x(i)}" y="${H-6}" text-anchor="middle">${MONTHS[i][0]}</text>`;
+      s += `<rect class="fd-hit" x="${x(i)-11}" y="${T}" width="22" height="${H-T}" data-m="${i}" data-tip="<b>${MONTHS[i]} 2015</b>${pct(v)} delayed" tabindex="0" role="button" aria-pressed="${S.m===i}" aria-label="${MONTHS[i]}: ${pct(v)} delayed. Select to filter."/>`;
+    });
+    $('fdMonthly').innerHTML = s;
+  }
+
+  function renderAirlines(){
+    const g = group('l','l',AL.length), rows = g.map((t,i)=>({i, v:1-dRate(t), f:t.f})).filter(r=>r.f>0).sort((a,b)=>b.v-a.v);
+    const lo = .6, hi = Math.max(.9, ...rows.map(r=>r.v));
+    $('fdAirlines').innerHTML = rows.map(r => `<button type="button" class="al-row${S.l===r.i?' sel':''}${S.l!==null&&S.l!==r.i?' dim':''}" data-l="${r.i}" aria-pressed="${S.l===r.i}"
+      data-tip="<b>${AL[r.i][0]}</b>${pct(r.v)} on time<br>${num(r.f)} flights"><span class="al-name">${AL[r.i][0]}</span><span class="al-track"><i style="width:${Math.max(2,(r.v-lo)/(hi-lo)*100).toFixed(1)}%"></i></span><b>${pct(r.v)}</b></button>`).join('');
+  }
+
+  function renderCancels(){
+    const g = group('m','m',12), rates = g.map(cRate), max = Math.max(...rates);
+    $('fdCancels').innerHTML = rates.map((v,i) => `<button type="button" class="cn-col${S.m===i?' sel':''}${S.m!==null&&S.m!==i?' dim':''}" data-m="${i}" aria-pressed="${S.m===i}"
+      aria-label="${MONTHS[i]}: ${pct(v,2)} cancelled" data-tip="<b>${MONTHS[i]} 2015</b>${pct(v,2)} cancelled"><span class="cn-bar"><i style="height:${(v/max*100).toFixed(1)}%"></i></span><small>${MONTHS[i][0]}</small></button>`).join('');
+  }
+
+  function syncControls(){
+    $('fdAirline').value = S.l===null ? '' : S.l;
+    $('fdMonth').value = S.m===null ? '' : S.m;
+    $('fdAirport').value = S.a===null ? '' : S.a;
+    $('fdReset').disabled = S.a===null && S.l===null && S.m===null;
+    const parts = [S.a!==null && AP[S.a][1], S.l!==null && AL[S.l][0], S.m!==null && MONTHS[S.m]+' 2015'].filter(Boolean);
+    $('fdStatus').textContent = parts.length ? 'Showing ' + parts.join(', ') : 'Showing all airports, airlines and months';
+  }
+
+  function render(){ renderKpis(); renderMap(); renderCauses(); renderMonthly(); renderAirlines(); renderCancels(); syncControls(); }
+
+  // Controls
+  const opt = (v,t) => `<option value="${v}">${t}</option>`;
+  $('fdAirline').innerHTML = opt('','All airlines') + AL.map((a,i)=>opt(i,a[0])).join('');
+  $('fdMonth').innerHTML = opt('','All months') + MONTHS.map((m,i)=>opt(i,m)).join('');
+  $('fdAirport').innerHTML = opt('','All airports') + AP.map((a,i)=>({a,i})).sort((x,y)=>x.a[1].localeCompare(y.a[1])).map(({a,i})=>opt(i,`${a[1]} (${a[0]})`)).join('');
+  const bindSel = (id,k) => $(id).addEventListener('change', e => { S[k] = e.target.value==='' ? null : +e.target.value; render(); });
+  bindSel('fdAirline','l'); bindSel('fdMonth','m'); bindSel('fdAirport','a');
+  $('fdReset').addEventListener('click', () => { S.a = S.l = S.m = null; render(); });
+
+  function toggle(target){
+    const el = target.closest('[data-a],[data-l],[data-m]');
+    if (!el || !root.contains(el)) return false;
+    for (const k of ['a','l','m']) if (el.dataset[k] !== undefined){ const v = +el.dataset[k]; S[k] = S[k]===v ? null : v; }
+    hideTip(); render(); return true;
+  }
+  root.addEventListener('click', e => toggle(e.target));
+  root.addEventListener('keydown', e => {
+    if ((e.key==='Enter' || e.key===' ') && e.target.matches('circle[data-a],rect[data-m]')){ e.preventDefault(); toggle(e.target); }
+  });
+
+  // Tooltip
+  const tip = $('fdTip');
+  function hideTip(){ tip.hidden = true; }
+  root.addEventListener('pointermove', e => {
+    const el = e.target.closest('[data-tip]');
+    if (!el){ hideTip(); return; }
+    tip.innerHTML = el.dataset.tip; tip.hidden = false;
+    const r = root.getBoundingClientRect(), tw = tip.offsetWidth;
+    let x = e.clientX - r.left + 14; if (x + tw > r.width - 8) x = e.clientX - r.left - tw - 14;
+    tip.style.left = Math.max(8,x) + 'px'; tip.style.top = (e.clientY - r.top + 14) + 'px';
+  });
+  root.addEventListener('pointerleave', hideTip);
+
+  render();
+})();
 
 route();
 </script>
